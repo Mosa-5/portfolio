@@ -1,10 +1,11 @@
+import { RefObject } from "react";
 import Uni from "../../assets/kiuLogo.jpg"
 import reactLogo from "../../assets/ReactCoursePic.avif"
 
-const About = () => {
+const About:React.FC<{aboutRef: RefObject<HTMLDivElement | null>}>= ({aboutRef}) => {
     return(
-        <div className="flex flex-col gap-15 max-w-screen-xl mx-auto px-5 pb-10">
-            <h1 className="font-extrabold text-5xl sm:text-7xl">About</h1>
+        <div ref={aboutRef} className="flex flex-col gap-15 max-w-screen-xl mx-auto px-5 pb-10">
+            <h1 className="font-extrabold text-5xl sm:text-6xl lg:text-7xl">About</h1>
            <div className="flex flex-col gap-20 justify-between sm:flex-row sm:*:w-1/2">
             <div className="flex flex-col gap-5">
             <h2 className="border-b-3 border-[#03045E] text-[24px] font-semibold">Education</h2>

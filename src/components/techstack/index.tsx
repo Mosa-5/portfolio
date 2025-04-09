@@ -1,9 +1,10 @@
+import { RefObject } from "react";
 
-const TechStack = () => {
+const TechStack:React.FC<{homeRef: RefObject<HTMLDivElement | null>}>= ({homeRef}) => {
 
     return (
-        <div className="flex flex-col gap-15">
-        <h2 className="text-5xl sm:text-7xl font-extrabold">Tech Stack</h2>
+        <div ref={homeRef} className="flex flex-col gap-15">
+        <h2 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold">Tech Stack</h2>
       
         <ul className="grid  w-full grid-cols-2 sm:grid-cols-4  md:grid-cols-5 gap-y-10 gap-x-4 text-lg sm:*:text-2xl
         *:flex *:flex-col *:items-center *:gap-2 font-medium place-items-center *:w-20 sm:*:w-30 "
