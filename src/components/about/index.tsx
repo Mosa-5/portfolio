@@ -1,6 +1,7 @@
 import { RefObject } from "react";
 import Uni from "../../assets/kiuLogo.jpg"
 import reactLogo from "../../assets/ReactCoursePic.avif"
+import schoolLogo from "../../assets/vekualogo.png"
 
 const About:React.FC<{aboutRef: RefObject<HTMLDivElement | null>}>= ({aboutRef}) => {
     return(
@@ -18,8 +19,13 @@ const About:React.FC<{aboutRef: RefObject<HTMLDivElement | null>}>= ({aboutRef})
                 <img src={reactLogo} alt="" className="w-30 h-30 rounded-lg border-black border-2 shadow-[4px_4px_0_0_black]"/>
                 <p className="text-md sm:text-lg">finished React Accelerator course at TBC IT Academy <span className="text-sm">(2023 autumn - 2024 winter)</span></p>
             </div>
+
+            <div className="w-full flex gap-2 items-center justify-between text-wrap break-words ">
+                <img src={schoolLogo} alt="" className="w-30 bg-white p-2 h-30 rounded-lg border-black border-2 shadow-[4px_4px_0_0_black]"/>
+                <p className="text-md sm:text-lg"> Academician Ilia Vekua Physics and Mathematics Public School No. 42 <span className="text-sm">(2016 - 2022)</span></p>
+            </div>
            
-            
+           
             </div>
 
             <div className="flex flex-col gap-5">
