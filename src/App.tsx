@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './App.css'
 import About from './components/about'
 import Header from './components/header'
@@ -17,6 +17,21 @@ function App() {
   const scrollTo = (section: keyof typeof sectionRefs) => {
     sectionRefs[section].current?.scrollIntoView({ behavior: 'smooth' });
   };
+
+
+
+  const [fontLoaded, setFontLoaded] = useState(false);
+
+  useEffect(() => {
+    document.fonts.ready.then(() => {
+      setFontLoaded(true);
+    });
+  }, []);
+
+  if (!fontLoaded) {
+    return <div  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 border-8 border-[#03055e5e] border-t-[#03045E] rounded-full animate-spin"
+    ></div>;
+  }
 
 
   return (
