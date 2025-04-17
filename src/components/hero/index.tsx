@@ -1,5 +1,5 @@
 import imageUrl from "../../assets/0be52701-c4b1-4e96-88b8-c1b0e260ed59.jpg"
-import resumeFile from '@/assets/resume.pdf';
+import resumeFile from '@/assets/Resume_Levan_Mosiashvili.pdf';
 const Hero = () => {
 
 
