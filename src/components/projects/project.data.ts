@@ -7,7 +7,7 @@ export const projectData: ProjectDataType[] = [
         image: gymgear, 
         description: "E-commerce platform, selling gym equipment,profiles page storing past order info as well as wishlisted items and personal info, ability to leave reviews for products",
         techstack: "React, Tailwind, supabase for database and backend abstraction",
-        webLink: "https://gym-app-4jrt.vercel.app",
+        webLink: "https://gym-app-7y5y.vercel.app/",
         githubLink: "https://github.com/Mosacd/gym-app",
     },
     {
