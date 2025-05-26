@@ -4,11 +4,20 @@ function CuteEyeFollower() {
   const [angle, setAngle] = useState(0);
   const [isBlinking, setIsBlinking] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const eyeRef = useRef<SVGSVGElement | null>(null);
 
   useEffect(() => {
+    // Check if device is mobile/touch device
+    const checkMobile = () => {
+      setIsMobile('ontouchstart' in window || navigator.maxTouchPoints > 0);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
     const handleMouseMove = (e: MouseEvent) => {
-      if (!eyeRef.current) return;
+      if (!eyeRef.current || isMobile) return;
 
       const eye = eyeRef.current.getBoundingClientRect();
       const eyeX = eye.left + eye.width / 2;
@@ -22,6 +31,15 @@ function CuteEyeFollower() {
       setAngle(deg);
     };
 
+    // Mobile looking around animation
+    let lookAroundInterval: NodeJS.Timeout;
+    if (isMobile) {
+      lookAroundInterval = setInterval(() => {
+        const randomAngle = Math.random() * 360;
+        setAngle(randomAngle);
+      }, 2000 + Math.random() * 3000); // Look around every 2-5 seconds
+    }
+
     // Random blinking
     const blinkInterval = setInterval(() => {
       if (!isHovering) { // Don't blink when hovering
@@ -30,13 +48,17 @@ function CuteEyeFollower() {
       }
     }, 3000 + Math.random() * 2000);
 
-    window.addEventListener("mousemove", handleMouseMove);
+    if (!isMobile) {
+      window.addEventListener("mousemove", handleMouseMove);
+    }
     
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener('resize', checkMobile);
       clearInterval(blinkInterval);
+      if (lookAroundInterval) clearInterval(lookAroundInterval);
     };
-  }, [isHovering]);
+  }, [isHovering, isMobile]);
 
   return (
     <div 
@@ -93,7 +115,9 @@ function CuteEyeFollower() {
 
         {/* Iris */}
         {!isBlinking && !isHovering && (
-          <g transform="translate(60, 60)" style={{ transition: 'all 0.1s ease-out' }}>
+          <g transform="translate(60, 60)" style={{ 
+            transition: isMobile ? 'all 0.8s ease-in-out' : 'all 0.1s ease-out' 
+          }}>
             <circle
               r="18"
               fill="#34347C"
