@@ -1,13 +1,14 @@
+import CuteEyeFollower from "../mouseFollower"
 
 const Header:React.FC<{ scrollTo: (section: "home" | "about" | "projects") => void}>= ({scrollTo}) => {
 
     return(
         <div className="flex gap-6 flex-col items-center sm:flex-row w-full max-w-screen-xl justify-between">
-            <h1 className="font-semibold text-[28px] sm:text-[24px]">Levan Mosiashvili</h1>
+            <div className="flex items-center"><h1 className="font-semibold text-[28px] sm:text-[24px]">Levan Mosiashvili</h1> <CuteEyeFollower/></div>
             <nav className="flex w-fit gap-10 items-center text-xl sm:text-lg *:cursor-pointer *:transition-all *:duration-300ms *:font-medium  *:hover:text-[#03055e78] *:hover:translate-y-[-3px] *:hover:scale-110">
                 <h2 onClick={() => scrollTo("home")}>TechStack</h2>
-                <h2 onClick={() => scrollTo("about")}>About</h2>
                 <h2 onClick={() => scrollTo("projects")}>Projects</h2>
+                <h2 onClick={() => scrollTo("about")}>About</h2>
             </nav>
             <div className="flex w-fit gap-10 items-center text-xl sm:text-lg *:cursor-pointer *:font-medium *:transition-all *:duration-300ms *:hover:translate-y-[-3px] *:hover:scale-110">
             <a target="_blank" href="https://www.linkedin.com/in/levan-mosiashvili-39165b301/" className="flex gap-1 group *:group-hover:text-[#03055e78] *:group-hover:fill-[#03055e78] *:group-hover:stroke-[#03055e78]">

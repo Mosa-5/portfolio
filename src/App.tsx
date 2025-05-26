@@ -33,12 +33,12 @@ function App() {
     ></div>;
   }
 
-
+console.log("App rendered");
   return (
     <div className='w-full sm:px-5 py-10 lg:p-10 max-w-[1280px] m-auto text-center'>
       <Header scrollTo = {scrollTo} />
-      <Hero />
-      <div className='flex flex-col gap-40 mt-40'>
+      <Hero/>
+      <div className='flex flex-col gap-40 mt-40 fancy-block'>
       <TechStack homeRef = {sectionRefs.home}/>
       <Projects projectsRef = {sectionRefs.projects} />
       <About aboutRef = {sectionRefs.about}/>
