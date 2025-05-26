@@ -17,21 +17,22 @@
 
 @layer base {
   :root {
-    --color-bg: oklch(70.7% 0.165 254.624);
-    --color-text: #03045E;
+    --color-bg: oklch(87% 0.065 274.039);
     --color-main-color: #03045E;
+    --color-main-text-shadow: #03055e95;
     --color-main-hover: oklch(0.655 0.163 52.998);
+    --color-main-button: #34347C;
   }
 
   h1,h2,h3,p,span,li{
-    color: #03045E;
+    color: var(--color-main-color);
   }
   
 }
 
 @layer utilities {
   .text-shadow {
-    text-shadow: 4px 4px 0 #03055e95;
+    text-shadow: 4px 4px 0 var(--color-main-text-shadow);
   }
 }
 
@@ -39,7 +40,7 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: oklch(87% 0.065 274.039);
+  background-color: var(--color-bg);
   font-family: Poppins;
 }
 
