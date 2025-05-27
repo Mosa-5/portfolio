@@ -46,6 +46,14 @@ html {
 }
 
 
+
+
+.hiddenClass {
+  opacity: 0;
+  visibility: hidden;
+}
+
+
 .slide-in-left {
    transform: translateX(-100%);
   animation: slideInHorizontal 1s forwards;
@@ -64,12 +72,16 @@ html {
 @keyframes slideInHorizontal {
   to {
     transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
   }
 }
 
 @keyframes slideInVertical {
   to {
     transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
   }
 }
 

@@ -5,7 +5,7 @@ const Hero = () => {
 
     return(
         <div className="flex w-full justify-center sm:justify-between items-center mt-30">
-        <div className="flex flex-col gap-10 items-center sm:items-start w-full max-w-lg slide-in-left">
+        <div className="flex flex-col gap-10 items-center sm:items-start w-full max-w-lg slide-in-left hiddenClass">
             <div className="flex flex-col items-center text-center sm:items-start sm:text-start">
               <div className="flex items-center gap-2">
             <h2 className="text-xl sm:text-xl lg:text-3xl font-medium">Hello, I'm Levan,</h2>
@@ -25,7 +25,7 @@ const Hero = () => {
     </a>
        </div>
    
-<img src={imageUrl} className="hidden w-full sm:block max-w-xs lg:max-w-md slide-in-right"/>
+<img src={imageUrl} className="hidden w-full sm:block max-w-xs lg:max-w-md slide-in-right hiddenClass"/>
 
   
        </div>
