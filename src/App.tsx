@@ -38,7 +38,7 @@ console.log("App rendered");
     <div className='w-full sm:px-5 py-10 lg:p-10 max-w-[1280px] m-auto text-center'>
       <Header scrollTo = {scrollTo} />
       <Hero/>
-      <div className='flex flex-col gap-40 mt-40 fancy-block'>
+      <div className='flex flex-col gap-40 mt-40 fancy-block *:pt-10'>
       <TechStack homeRef = {sectionRefs.home}/>
       <Projects projectsRef = {sectionRefs.projects} />
       <About aboutRef = {sectionRefs.about}/>
