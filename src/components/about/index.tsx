@@ -31,7 +31,7 @@ const About:React.FC<{aboutRef: RefObject<HTMLDivElement | null>}>= ({aboutRef})
             <div className="flex flex-col gap-5">
             <h2 className="border-b-3 border-[#03045E] text-[24px] font-semibold">Extra</h2>
             <div className="w-full text-wrap break-words ">
-            <p className="text-md sm:text-lg">I'm currently open to frontend roles or freelance gigs, I'd like to get my experience up, so feel free to contact me on linkedin or email me <span className="font-medium underline cursor-pointer">levanmosiashvili5@gmail.com</span></p>
+            <p className="text-md sm:text-lg">I'm currently open to frontend roles or freelance gigs, I'd like to get my experience up, so feel free to contact me on linkedin or email me at: <a href="mailto:levanmosiashvili5@gmail.com" className="font-medium text-xl hover:underline cursor-pointer">levanmosiashvili5@gmail.com</a></p>
             </div>
             </div>
             </div>

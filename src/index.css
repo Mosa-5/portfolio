@@ -42,5 +42,35 @@ html {
   box-sizing: border-box;
   background-color: var(--color-bg);
   font-family: Poppins;
+  overflow-x:hidden;
 }
+
+
+.slide-in-left {
+   transform: translateX(-100%);
+  animation: slideInHorizontal 1s forwards;
+}
+
+.slide-in-right {
+   transform: translateX(100%);
+  animation: slideInHorizontal 1s forwards;
+}
+
+.slide-in-top {
+   transform: translateY(-100%);
+  animation: slideInVertical 1s forwards;
+}
+
+@keyframes slideInHorizontal {
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInVertical {
+  to {
+    transform: translateY(0);
+  }
+}
+
 
