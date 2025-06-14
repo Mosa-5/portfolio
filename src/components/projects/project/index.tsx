@@ -5,10 +5,10 @@ import { projectData } from "../project.data";
 const Project = () => {
 
     return(
-        <div className="flex flex-col sm:flex-row gap-7">
+        <div className="grid grid-cols-2 gap-15">
         {projectData.map((project) => { 
             return(
-                <a target="_blank" href={project.webLink} className="flex relative flex-col shadow-[4px_4px_0_0_black] hover:shadow-[10px_10px_0_0_black] mx-5 group hover:translate-y-[-5px]  hover:translate-x-[-5px] duration-300 cursor-pointer gap-2  items-center border-4 overflow-hidden rounded-lg bg-[#34347C] card-border-animation">
+                <a target="_blank" href={project.webLink} className="flex relative flex-col shadow-[4px_4px_0_0_black] hover:shadow-[10px_10px_0_0_black] group hover:translate-y-[-5px]  hover:translate-x-[-5px] duration-300 cursor-pointer gap-2  items-center border-4 overflow-hidden rounded-lg bg-[#34347C] card-border-animation">
                         <span className="absolute bg-black/70 text-white text-2xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  p-1  opacity-0 group-hover:opacity-100 rounded-xl duration-300 animate-bounce">Press to check out</span>
                         <img className="" src={project.image} alt="" />
                         <div className="max-w-6/7 flex flex-col justify-between h-full">
