@@ -17,7 +17,7 @@
 
 @layer base {
   :root {
-    --color-bg: oklch(87% 0.065 274.039);
+    --color-bg: oklch(87% 0.065 274.039); /* rgb(200,220,254) */
     --color-main-color: #03045E;
     --color-main-text-shadow: #03055e95;
     --color-main-hover: oklch(0.655 0.163 52.998);

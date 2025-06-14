@@ -24,8 +24,8 @@ export const projectData: ProjectDataType[] = [
         image: neighbourly, 
         description: "simple web application that helps users discover volunteer opportunities in their community",
         techstack: "React, Tailwind",
-        webLink: "https://kokolang.site/",
-        githubLink: "https://github.com/Mosacd/koko",
+        webLink: "https://neighbourly-two.vercel.app/",
+        githubLink: "https://github.com/Mosacd/Neighbourly",
     },
 ]
 
