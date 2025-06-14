@@ -1,5 +1,5 @@
 import imageUrl from "../../assets/hero image.svg";
-import resumeFile from '@/assets/Resume_Levan_Mosiashvili.pdf';
+import resumeFile from '@/assets/Levan Mosiashvili Resume English.pdf';
 const Hero = () => {
 
 
