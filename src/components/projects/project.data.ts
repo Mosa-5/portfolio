@@ -4,6 +4,7 @@ import neighbourly from "@/assets/projectImages/Neighbourly.png"
 
 export const projectData: ProjectDataType[] = [
     {
+        id:1,
         title: "GymGear",
         image: gymgear, 
         description: "E-commerce platform, selling gym equipment,profiles page storing past order info as well as wishlisted items and personal info, ability to leave reviews for products",
@@ -12,6 +13,7 @@ export const projectData: ProjectDataType[] = [
         githubLink: "https://github.com/Mosacd/gym-app",
     },
     {
+        id: 2,
         title: "KoKo",
         image: koko, 
         description: "fun little website, where users can learn/practice sign language",
@@ -20,6 +22,7 @@ export const projectData: ProjectDataType[] = [
         githubLink: "https://github.com/Mosacd/koko",
     },
     {
+        id:3,
         title: "Neighbourly",
         image: neighbourly, 
         description: "simple web application that helps users discover volunteer opportunities in their community",
@@ -30,6 +33,7 @@ export const projectData: ProjectDataType[] = [
 ]
 
 type ProjectDataType = {
+    id: number,
     title: string,
     image:string,
     description: string,
