@@ -5,7 +5,7 @@ import { projectData } from "../project.data";
 const Project = () => {
 
     return(
-        <div className="grid grid-cols-2 gap-15">
+        <div className="grid grid-cols-1 px-5 md:grid-cols-2 gap-15">
         {projectData.map((project) => { 
             return(
                 <a target="_blank" href={project.webLink} className="flex relative flex-col shadow-[4px_4px_0_0_black] hover:shadow-[10px_10px_0_0_black] group hover:translate-y-[-5px]  hover:translate-x-[-5px] duration-300 cursor-pointer gap-2  items-center border-4 overflow-hidden rounded-lg bg-[#34347C] card-border-animation">
