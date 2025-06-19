@@ -16,7 +16,7 @@ export const projectData: ProjectDataType[] = [
         image: koko, 
         description: "fun little website, where users can learn/practice sign language",
         techstack: "React, Tailwind",
-        webLink: "https://kokolang.site/",
+        webLink: "https://koko-lilac.vercel.app/home",
         githubLink: "https://github.com/Mosacd/koko",
     },
     {
