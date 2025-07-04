@@ -2,7 +2,7 @@ import gymgear from "@/assets/projectImages/GymGear.png";
 import koko from "@/assets/projectImages/KoKo.png";
 import neighbourly from "@/assets/projectImages/Neighbourly.png"
 import momentum from "@/assets/projectImages/Momentum.png"
-import StarWars from "@/assets/projectImages/starWars.png"
+import StarWars from "@/assets/projectImages/StarWars.png"
 import Ecommerce from "@/assets/projectImages/Ecommerce.png"
 
 export const projectData: ProjectDataType[] = [
