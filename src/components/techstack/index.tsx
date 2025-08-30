@@ -6,7 +6,7 @@ const TechStack:React.FC<{homeRef: RefObject<HTMLDivElement | null>}>= ({homeRef
 
     return (
         <div ref={homeRef} className="flex flex-col gap-15">
-        <h2 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold">Tech Stack</h2>
+        <h2 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold border-b-3 border-[#d8a013] w-fit self-center">Tech Stack</h2>
       
         <div className="relative">
             <WindParticles/>

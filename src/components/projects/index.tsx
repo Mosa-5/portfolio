@@ -5,7 +5,7 @@ const Projects:React.FC <{projectsRef: RefObject<HTMLDivElement | null>}>= ({pro
 
     return(
         <div ref={projectsRef} className="flex flex-col gap-15">
-            <h1 className="font-extrabold text-5xl sm:text-6xl lg:text-7xl">Projects</h1>
+            <h1 className="font-extrabold text-5xl sm:text-6xl lg:text-7xl border-b-3 border-[#d8a013] w-fit self-center">Projects</h1>
         
             <Project/>
                 {/* <div>

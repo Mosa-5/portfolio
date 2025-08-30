@@ -19,7 +19,7 @@
   :root {
     --color-bg: #E5E5E5; /* rgb(200,220,254) */
     --color-main-color: #25282B;
-    --color-main-text-shadow: #03055e95;
+    --color-main-text-shadow: #d8a013ad; /*03055e95*/
     --color-main-hover: oklch(0.655 0.163 52.998);
     --color-main-button: #34347C;
   }
