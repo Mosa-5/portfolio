@@ -81,17 +81,17 @@ function CuteEyeFollower() {
             <stop offset="100%" stopColor="#e9ecef" />
           </radialGradient>
           <radialGradient id="irisGradient" cx="0.3" cy="0.3">
-            <stop offset="0%" stopColor="#4dabf7" />
-            <stop offset="50%" stopColor="#339af0" />
-            <stop offset="100%" stopColor="#1c7ed6" />
+            <stop offset="0%" stopColor="#d8a013" />
+            <stop offset="50%" stopColor="#c4910f" />
+            <stop offset="100%" stopColor="#b8850e" />
           </radialGradient>
           <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
-            <feDropShadow dx="2" dy="2" stdDeviation="3" floodColor="#00000020"/>
+            <feDropShadow dx="2" dy="2" stdDeviation="3" floodColor="#25282B20"/>
           </filter>
         </defs>
 
         {/* Eyelashes - top */}
-        <g stroke="#03045E" strokeWidth="2" strokeLinecap="round">
+        <g stroke="#25282B" strokeWidth="2" strokeLinecap="round">
           <line x1="45" y1="25" x2="42" y2="15" />
           <line x1="60" y1="20" x2="60" y2="8" />
           <line x1="75" y1="25" x2="78" y2="15" />
@@ -101,13 +101,13 @@ function CuteEyeFollower() {
 
         {/* Main eye shape */}
         <ellipse 
-        className="group-hover:fill-[#34347C]"
+          className="group-hover:fill-[#d8a013]"
           cx="60" 
           cy="60" 
           rx="45" 
           ry={isBlinking || isHovering ? "1" : "35"} 
           fill="url(#eyeGradient)" 
-          stroke="#03045E" 
+          stroke="#25282B" 
           strokeWidth="3"
           filter="url(#shadow)"
           style={{ transition: 'ry 0.3s ease-out' }}
@@ -120,7 +120,7 @@ function CuteEyeFollower() {
           }}>
             <circle
               r="18"
-              fill="#34347C"
+              fill="#25282B"
               transform={`rotate(${angle}) translate(12, 0)`}
             />
             
@@ -148,7 +148,7 @@ function CuteEyeFollower() {
         )}
 
         {/* Bottom eyelashes */}
-        <g stroke="#03045E" strokeWidth="1.5" strokeLinecap="round" opacity="0.6">
+        <g stroke="#25282B" strokeWidth="1.5" strokeLinecap="round" opacity="0.6">
           <line x1="40" y1="85" x2="38" y2="92" />
           <line x1="55" y1="90" x2="55" y2="98" />
           <line x1="65" y1="90" x2="65" y2="98" />
@@ -160,9 +160,8 @@ function CuteEyeFollower() {
           <g transform="translate(60, 60)" opacity="0.8">
             <path
               d="M0,-8 C-4,-12 -10,-12 -10,-6 C-10,-2 0,4 0,4 C0,4 10,-2 10,-6 C10,-12 4,-12 0,-8 Z"
-              fill="#34347C"
+              fill="#d8a013"
             />
-            
           </g>
         )}
 
