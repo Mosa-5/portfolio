@@ -15,7 +15,7 @@ const BlobPortfolio = ({ className = '' }) => {
       </style>
 
       <div 
-        className="relative block overflow-hidden w-full aspect-square cursor-pointer transition-transform duration-300 hover:scale-105"
+        className="relative block overflow-hidden w-full aspect-square"
         style={{
           background: '#d8a013',
           animation: 'blob-morph 8s ease-in-out infinite'

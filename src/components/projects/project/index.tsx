@@ -9,9 +9,9 @@ const Project = () => {
         {projectData.map((project) => { 
             return(
                 <a target="_blank" href={project.webLink} className="flex relative bg-[#25282B] flex-col shadow-[4px_4px_0_0_black] hover:shadow-[10px_10px_0_0_black] group hover:translate-y-[-5px]  hover:translate-x-[-5px] duration-300 cursor-pointer gap-2  items-center border-4 overflow-hidden rounded-lg  card-border-animation">
-                        <span className="absolute bg-black/70 text-white text-2xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  p-1  opacity-0 group-hover:opacity-100 rounded-xl duration-300 animate-bounce">Press to check out</span>
+                        <span className="absolute bg-[#d8a013] text-[#25282B] px-2 text-2xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  p-1  opacity-0 group-hover:opacity-100 rounded-xl duration-300 animate-bounce">Press to check out</span>
                         <img className="" src={project.image} alt="" />
-                        <div className="max-w-6/7 border-[#ffb700] flex flex-col justify-between h-full">
+                        <div className="max-w-6/7 flex flex-col justify-between h-full">
                        <div className="w-full flex flex-col gap-2 h-full overflow-hidden text-start *:text-white">
                         <h3 className="text-xl font-semibold self-center">{project.title}</h3>
                         <p>{project.description}</p>
