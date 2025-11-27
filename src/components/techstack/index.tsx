@@ -1,7 +1,6 @@
 import { RefObject } from "react";
 import { techstackData } from "./techstackData";
 import WindParticles from "./particles"
-
 const TechStack:React.FC<{homeRef: RefObject<HTMLDivElement | null>}>= ({homeRef}) => {
 
     return (

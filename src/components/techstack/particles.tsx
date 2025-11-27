@@ -8,10 +8,10 @@ const WindParticles = () => {
                         key={i}
                         className="absolute w-1.5 h-5 bg-[#d8a013] rounded-full opacity-100"
                         style={{
-                            left: `${Math.random() * 100}%`,
-                            bottom: `-${Math.random() * 30}px`,
-                            animationDelay: `${Math.random() * 3}s`,
-                            animation: `windUp ${3 + Math.random() * 2}s linear infinite`
+                            left: `${(i * 7) % 100}%`,
+                            bottom: `-${(i * 11) % 30}px`,
+                            animationDelay: `${(i * 0.4) % 3}s`,
+                            animation: `windUp ${3 + ((i * 0.3) % 2)}s linear infinite`
                         }}
                     />
                 ))}

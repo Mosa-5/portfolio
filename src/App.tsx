@@ -5,6 +5,8 @@ import Header from './components/header'
 import Hero from './components/hero'
 import Projects from './components/projects'
 import TechStack from './components/techstack'
+// import CuteEyeFollower from './components/mouseFollower'
+
 
 function App() {
 
@@ -33,9 +35,8 @@ function App() {
     ></div>;
   }
 
-console.log("App rendered");
   return (
-    <div className='w-full sm:px-5 py-10 lg:p-10 max-w-[1280px] m-auto text-center'>
+    <div className='w-full relative sm:px-5 py-10 lg:p-10 max-w-[1280px] m-auto text-center'>
       <Header scrollTo = {scrollTo} />
       <Hero/>
       <div className='flex flex-col gap-40 mt-40 fancy-block *:pt-10'>
@@ -43,6 +44,7 @@ console.log("App rendered");
       <Projects projectsRef = {sectionRefs.projects} />
       <About aboutRef = {sectionRefs.about}/>
       </div>
+      {/* <CuteEyeFollower/> */}
     </div>
   )
 }

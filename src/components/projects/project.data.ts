@@ -1,15 +1,23 @@
-import gymgear from "@/assets/projectImages/GymGear.png";
-import koko from "@/assets/projectImages/KoKo.png";
-import neighbourly from "@/assets/projectImages/Neighbourly.png";
-import momentum from "@/assets/projectImages/Momentum.png";
-import StarWars from "@/assets/projectImages/StarWars.png";
-import Ecommerce from "@/assets/projectImages/Ecommerce.png";
-import Kiu from "@/assets/projectImages/KIU.png";
+import gymgear from "@/assets/projectImages/GymGear.jpg";
+import koko from "@/assets/projectImages/KoKo.jpg";
+import neighbourly from "@/assets/projectImages/Neighbourly.jpg";
+import momentum from "@/assets/projectImages/Momentum.jpg";
+import StarWars from "@/assets/projectImages/StarWars.jpg";
+import Ecommerce from "@/assets/projectImages/Ecommerce.jpg";
+import Kiu from "@/assets/projectImages/KIU.jpg";
+import gymgearW from "@/assets/projectImages/GymGear.webp";
+import kokoW from "@/assets/projectImages/KoKo.webp";
+import neighbourlyW from "@/assets/projectImages/Neighbourly.webp";
+import momentumW from "@/assets/projectImages/Momentum.webp";
+import StarWarsW from "@/assets/projectImages/StarWars.webp";
+import EcommerceW from "@/assets/projectImages/Ecommerce.webp";
+import KiuW from "@/assets/projectImages/KIU.webp";
 
 export const projectData: ProjectDataType[] = [
   {
     title: "KIU",
     image: Kiu,
+    imageWebp: KiuW,
     description:
       "A modern, responsive, and multilingual university website built with React, TypeScript, and Vite. Developed as a university project to represent Kutaisi International University (KIU) with dynamic content, interactive pages, and a polished user experience.",
     techstack: "React, TypeScript, Tailwind, Vite",
@@ -19,6 +27,7 @@ export const projectData: ProjectDataType[] = [
   {
     title: "GymGear",
     image: gymgear,
+    imageWebp: gymgearW,
     description:
       "A full-featured e-commerce platform for gym equipment. Includes user authentication, profiles with order history and wishlists, and product reviews. Data is managed via Supabase.",
     techstack: "React, TypeScript, Tailwind, Vite",
@@ -28,6 +37,7 @@ export const projectData: ProjectDataType[] = [
   {
     title: "KoKo",
     image: koko,
+    imageWebp: kokoW,
     description:
       "A playful educational app that helps users learn and practice sign language through interactive features and a clean, user-friendly interface.",
     techstack: "React, TypeScript, Tailwind, Vite",
@@ -37,6 +47,7 @@ export const projectData: ProjectDataType[] = [
   {
     title: "Neighbourly",
     image: neighbourly,
+    imageWebp: neighbourlyW,
     description:
       "A web app designed to connect users with local volunteer opportunities. Created based on a provided Figma design, focused on responsiveness and accessibility.",
     techstack: "React, TypeScript, Tailwind, Vite",
@@ -46,6 +57,7 @@ export const projectData: ProjectDataType[] = [
   {
     title: "Star Wars",
     image: StarWars,
+    imageWebp: StarWarsW,
     description:
       "A Star Wars character catalog app using SWAPI. Features pagination, search with debounce and abort controller, and individual detail pages with expandable sections for films, species, and more.",
     techstack: "React, TypeScript, Tailwind, Vite",
@@ -55,6 +67,7 @@ export const projectData: ProjectDataType[] = [
   {
     title: "Momentum",
     image: momentum,
+    imageWebp: momentumW,
     description:
       "A Jira-style project management tool designed for 1920px desktop screens. Built for the Redberry International React x Laravel course application.",
     techstack: "React, TypeScript, Tailwind, Vite",
@@ -64,6 +77,7 @@ export const projectData: ProjectDataType[] = [
   {
     title: "E-commerce",
     image: Ecommerce,
+    imageWebp: EcommerceW,
     description:
       "A fully custom-built e-commerce site with no component libraries or CSS frameworks. Built in plain JSX, it features category pages, individual product pages, a cart dropdown, a cart page, and a 3-step checkout flow.",
     techstack: "React (CRA), JSX, Custom CSS",
@@ -75,6 +89,7 @@ export const projectData: ProjectDataType[] = [
 type ProjectDataType = {
   title: string;
   image: string;
+  imageWebp: string;
   description: string;
   techstack: string;
   webLink: string;

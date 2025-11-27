@@ -1,173 +1,189 @@
-import { useEffect, useState, useRef } from "react";
+// import { useState, useEffect, useRef } from "react";
 
-function CuteEyeFollower() {
-  const [angle, setAngle] = useState(0);
-  const [isBlinking, setIsBlinking] = useState(false);
-  const [isHovering, setIsHovering] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-  const eyeRef = useRef<SVGSVGElement | null>(null);
+// interface Message {
+//   sender: "user" | "bot";
+//   text: string;
+// }
 
-  useEffect(() => {
-    // Check if device is mobile/touch device
-    const checkMobile = () => {
-      setIsMobile('ontouchstart' in window || navigator.maxTouchPoints > 0);
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
+// const RobotChatbot: React.FC = () => {
+//   const [isOpen, setIsOpen] = useState(false);
+//   const [messages, setMessages] = useState<Message[]>([]);
+//   const [input, setInput] = useState("");
+//   const [loading, setLoading] = useState(false);
+  
+//   const messagesEndRef = useRef<HTMLDivElement>(null);
+//   const initialMessageSent = useRef(false);
 
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!eyeRef.current || isMobile) return;
+//   useEffect(() => {
+//     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+//   }, [messages]);
 
-      const eye = eyeRef.current.getBoundingClientRect();
-      const eyeX = eye.left + eye.width / 2;
-      const eyeY = eye.top + eye.height / 2;
+//   // Show welcome message the first time the chat opens
+//   useEffect(() => {
+//     if (isOpen && !initialMessageSent.current) {
+//       setMessages([
+//         {
+//           sender: "bot",
+//           text: "Hi! I'm here to help you learn more about me. Feel free to ask anything!",
+//         },
+//       ]);
+//       initialMessageSent.current = true;
+//     }
+//   }, [isOpen]);
 
-      const dx = e.clientX - eyeX;
-      const dy = e.clientY - eyeY;
-      const rad = Math.atan2(dy, dx);
-      const deg = (rad * 180) / Math.PI;
+//   const handleSend = async () => {
+//     const userText = input.trim();
+//     if (!userText) return;
 
-      setAngle(deg);
-    };
+//     setMessages((prev) => [...prev, { sender: "user", text: userText }]);
+//     setInput("");
+//     setLoading(true);
 
-    // Mobile looking around animation
-    let lookAroundInterval: NodeJS.Timeout;
-    if (isMobile) {
-      lookAroundInterval = setInterval(() => {
-        const randomAngle = Math.random() * 360;
-        setAngle(randomAngle);
-      }, 2000 + Math.random() * 3000); // Look around every 2-5 seconds
-    }
+//     try {
+//       const context = `
+// You are a friendly personal assistant chatbot representing the user.
 
-    // Random blinking
-    const blinkInterval = setInterval(() => {
-      if (!isHovering) { // Don't blink when hovering
-        setIsBlinking(true);
-        setTimeout(() => setIsBlinking(false), 150);
-      }
-    }, 3000 + Math.random() * 2000);
+// YOUR PERSONALITY & PURPOSE:
+// - You are warm, helpful, and conversational.
+// - You help visitors learn about the user's background, skills, projects, and interests.
+// - You can answer questions about their experience, technologies they work with, and their goals.
 
-    if (!isMobile) {
-      window.addEventListener("mousemove", handleMouseMove);
-    }
-    
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener('resize', checkMobile);
-      clearInterval(blinkInterval);
-      if (lookAroundInterval) clearInterval(lookAroundInterval);
-    };
-  }, [isHovering, isMobile]);
+// INFORMATION ABOUT THE USER:
+// - Name: [Your Name]
+// - Role: [Your Role - e.g., Full Stack Developer, Designer, etc.]
+// - Skills: [Your key skills - e.g., React, TypeScript, Node.js, etc.]
+// - Experience: [Brief summary of your experience]
+// - Projects: [Mention 2-3 key projects you've worked on]
+// - Interests: [Your professional interests or hobbies]
+// - Contact: [Your email or preferred contact method]
+// - Location: [Your location if you want to share]
 
-  return (
-    <div 
-      className="group w-15 h-15 cursor-pointer"
-      onMouseEnter={() => setIsHovering(true)}
-      onMouseLeave={() => setIsHovering(false)}
-    >
-      <svg 
-        ref={eyeRef} 
-        viewBox="0 0 120 120" 
-        className={`w-full h-full drop-shadow-lg transition-transform duration-300 ${
-          isHovering ? 'scale-80' : 'scale-100'
-        }`}
-      >
-        {/* Outer eye shape with gradient */}
-        <defs>
-          <radialGradient id="eyeGradient" cx="0.3" cy="0.3">
-            <stop offset="0%" stopColor="#ffffff" />
-            <stop offset="70%" stopColor="#f8f9fa" />
-            <stop offset="100%" stopColor="#e9ecef" />
-          </radialGradient>
-          <radialGradient id="irisGradient" cx="0.3" cy="0.3">
-            <stop offset="0%" stopColor="#d8a013" />
-            <stop offset="50%" stopColor="#c4910f" />
-            <stop offset="100%" stopColor="#b8850e" />
-          </radialGradient>
-          <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
-            <feDropShadow dx="2" dy="2" stdDeviation="3" floodColor="#25282B20"/>
-          </filter>
-        </defs>
+// GUIDELINES:
+// - Be concise but friendly and conversational.
+// - If asked something you don't know, be honest and suggest they reach out directly.
+// - Keep responses natural and engaging.
+// - If the question is unrelated to the user, politely guide the conversation back.
+// `;
 
-        {/* Eyelashes - top */}
-        <g stroke="#25282B" strokeWidth="2" strokeLinecap="round">
-          <line x1="45" y1="25" x2="42" y2="15" />
-          <line x1="60" y1="20" x2="60" y2="8" />
-          <line x1="75" y1="25" x2="78" y2="15" />
-          <line x1="35" y1="35" x2="30" y2="28" />
-          <line x1="85" y1="35" x2="90" y2="28" />
-        </g>
+//       const prompt = `${context}\nUser: ${userText}\nAssistant:`;
 
-        {/* Main eye shape */}
-        <ellipse 
-          className="group-hover:fill-[#d8a013]"
-          cx="60" 
-          cy="60" 
-          rx="45" 
-          ry={isBlinking || isHovering ? "1" : "35"} 
-          fill="url(#eyeGradient)" 
-          stroke="#25282B" 
-          strokeWidth="3"
-          filter="url(#shadow)"
-          style={{ transition: 'ry 0.3s ease-out' }}
-        />
+//       const response = await fetch("https://api.anthropic.com/v1/messages", {
+//         method: "POST",
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify({
+//           model: "claude-sonnet-4-20250514",
+//           max_tokens: 1000,
+//           messages: [
+//             { role: "user", content: prompt }
+//           ],
+//         }),
+//       });
 
-        {/* Iris */}
-        {!isBlinking && !isHovering && (
-          <g transform="translate(60, 60)" style={{ 
-            transition: isMobile ? 'all 0.8s ease-in-out' : 'all 0.1s ease-out' 
-          }}>
-            <circle
-              r="18"
-              fill="#25282B"
-              transform={`rotate(${angle}) translate(12, 0)`}
-            />
-            
-            {/* Pupil */}
-            <circle
-              r="8"
-              fill="#1a1a1a"
-              transform={`rotate(${angle}) translate(12, 0)`}
-            />
-            
-            {/* Eye shine/highlight */}
-            <circle
-              r="3"
-              fill="#ffffff"
-              opacity="0.9"
-              transform={`rotate(${angle}) translate(12, 0) translate(-2, -2)`}
-            />
-            <circle
-              r="1.5"
-              fill="#ffffff"
-              opacity="0.7"
-              transform={`rotate(${angle}) translate(12, 0) translate(3, 3)`}
-            />
-          </g>
-        )}
+//       const data = await response.json();
+//       const botReply = data.content[0].text;
 
-        {/* Bottom eyelashes */}
-        <g stroke="#25282B" strokeWidth="1.5" strokeLinecap="round" opacity="0.6">
-          <line x1="40" y1="85" x2="38" y2="92" />
-          <line x1="55" y1="90" x2="55" y2="98" />
-          <line x1="65" y1="90" x2="65" y2="98" />
-          <line x1="80" y1="85" x2="82" y2="92" />
-        </g>
+//       setMessages((prev) => [...prev, { sender: "bot", text: botReply }]);
+//       setLoading(false);
+//     } catch (err) {
+//       console.error(err);
+//       setMessages((prev) => [
+//         ...prev,
+//         {
+//           sender: "bot",
+//           text: "Sorry, I had trouble processing your question. Please try again!",
+//         },
+//       ]);
+//       setLoading(false);
+//     }
+//   };
 
-        {/* Heart when eye is closed */}
-        {(isBlinking) && (
-          <g transform="translate(60, 60)" opacity="0.8">
-            <path
-              d="M0,-8 C-4,-12 -10,-12 -10,-6 C-10,-2 0,4 0,4 C0,4 10,-2 10,-6 C10,-12 4,-12 0,-8 Z"
-              fill="#d8a013"
-            />
-          </g>
-        )}
+//   return (
+//     <>
+//       {/* Chat Window */}
+// <div
+//   className={`fixed bottom-5 right-5 w-96 max-w-[calc(100vw_-_2.5rem)] h-[500px] bg-white rounded-xl shadow-2xl flex flex-col border-2 border-[#d8a013] transition-all duration-300 z-40 origin-bottom-right
+//     ${isOpen
+//       ? "scale-100 opacity-100 translate-y-0 pointer-events-auto"
+//       : "scale-95 opacity-0 translate-y-4 pointer-events-none"
+//     }
+//   `}
+// >
+//         {/* Header */}
+//           <div className="bg-[#d8a013] text-black p-4 rounded-t-lg flex justify-between items-center font-semibold">
+//             <span className="text-black">Chat Assistant</span>
+//             <button
+//               onClick={() => setIsOpen(false)}
+//               className="cursor-pointer hover:opacity-80 transition-opacity"
+//               aria-label="Close chat"
+//             >
+//               ✕
+//             </button>
+//           </div>
 
-      </svg>
-    </div>
-  );
-}
+//           {/* Messages */}
+//           <div className="flex-1 p-4 overflow-y-auto flex flex-col gap-2">
+//             {messages.map((msg, i) => (
+//               <div
+//                 key={i}
+//                 className={`p-3 rounded-lg max-w-[80%] ${
+//                   msg.sender === "user"
+//                     ? "bg-indigo-100 self-end"
+//                     : "bg-gray-100 self-start"
+//                 }`}
+//               >
+//                 {msg.text}
+//               </div>
+//             ))}
 
-export default CuteEyeFollower;
+//             {loading && (
+//               <div className="text-gray-500 text-sm animate-pulse">
+//                 Thinking...
+//               </div>
+//             )}
+//             <div ref={messagesEndRef} />
+//           </div>
+
+//           {/* Input */}
+//           <div className="p-3 border-t flex gap-2">
+//             <input
+//               className="flex-1 border rounded-lg px-3 py-2 focus:outline-none focus:ring-[1px] focus:ring-black transition-all"
+//               value={input}
+//               onChange={(e) => setInput(e.target.value)}
+//               placeholder="Type a message..."
+//               onKeyDown={(e) => e.key === "Enter" && handleSend()}
+//             />
+//             <button
+//               className="px-4 py-2 bg-[#d8a013] duration-300 cursor-pointer hover:bg-[#9e760f] rounded-md disabled:opacity-50"
+//               onClick={handleSend}
+//               disabled={loading}
+//               aria-label="Send message"
+//             >
+//               Send
+//             </button>
+//           </div>
+//         </div>
+
+//       {/* Chat Button */}
+//       <button
+//         onClick={() => setIsOpen(true)}
+//         className={`fixed duration-300 bottom-5 right-6 bg-[#d8a013] w-18 h-18 sm:w-17 sm:h-17  rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:scale-110 transition-transform z-50 ${
+//           isOpen ? "scale-0 opacity-0" : "scale-100 opacity-100 animate-bounce"
+//         }`}
+//         aria-label="Open chatbot"
+//       >
+//         <svg fill="#E5E5E5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" className="w-16 h-16 sm:w-15 sm:h-15 stroke-[1.5px] stroke-black">
+//           <g>
+//             <path d="M49.6,25.8c7.2,0,13,5.8,13,13v3.3c-4.3-0.5-8.7-0.7-13-0.7c-4.3,0-8.7,0.2-13,0.7v-3.3 C36.6,31.7,42.4,25.8,49.6,25.8z"></path>
+//             <path d="M73.2,63.8l1.3-11.4c2.9,0.5,5.1,2.9,5.1,5.6C79.6,61.2,76.7,63.8,73.2,63.8z"></path>
+//             <path d="M25.9,63.8c-3.5,0-6.4-2.6-6.4-5.8c0-2.8,2.2-5.1,5.1-5.6L25.9,63.8z"></path>
+//             <path d="M68.7,44.9c-6.6-0.7-12.9-1-19-1c-6.1,0-12.5,0.3-19,1h0c-2.2,0.2-3.8,2.2-3.5,4.3l2,19.4 c0.2,1.8,1.6,3.3,3.5,3.5c5.6,0.7,11.3,1,17.1,1s11.5-0.3,17.1-1c1.8-0.2,3.3-1.7,3.5-3.5l2-19.4v0C72.4,47,70.9,45.1,68.7,44.9z M38.6,62.5c-1.6,0-2.8-1.6-2.8-3.7s1.3-3.7,2.8-3.7s2.8,1.6,2.8,3.7S40.2,62.5,38.6,62.5z M55.3,66.6c0,0.2-0.1,0.4-0.2,0.5 c-0.1,0.1-0.3,0.2-0.5,0.2h-9.9c-0.2,0-0.4-0.1-0.5-0.2c-0.1-0.1-0.2-0.3-0.2-0.5v-1.8c0-0.4,0.3-0.7,0.7-0.7h0.2 c0.4,0,0.7,0.3,0.7,0.7v0.9h8.1v-0.9c0-0.4,0.3-0.7,0.7-0.7h0.2c0.4,0,0.7,0.3,0.7,0.7V66.6z M60.6,62.5c-1.6,0-2.8-1.6-2.8-3.7 s1.3-3.7,2.8-3.7s2.8,1.6,2.8,3.7S62.2,62.5,60.6,62.5z"></path>
+//           </g>
+//         </svg>
+//       </button>
+//     </>
+//   );
+// };
+
+// export default RobotChatbot;

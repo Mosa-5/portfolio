@@ -1,5 +1,6 @@
 import { RefObject } from "react";
 import { Certificates, Education, Work } from "./index.data";
+import ResponsiveImage from "../imagewrapper";
 
 const About: React.FC<{ aboutRef: RefObject<HTMLDivElement | null> }> = ({
   aboutRef,
@@ -18,11 +19,12 @@ const About: React.FC<{ aboutRef: RefObject<HTMLDivElement | null> }> = ({
           <h2 className="border-b-3 border-[#d8a013] text-[24px] font-semibold">
             Education
           </h2>
-          {Education.map((item) => (
-            <div className="w-full flex gap-3 items-center justify-between text-wrap break-words ">
-              <img
+          {Education.map((item, index) => (
+            <div key={index} className="w-full flex gap-3 items-center justify-between text-wrap break-words ">
+              <ResponsiveImage
                 src={item.image}
-                alt=""
+                webp=""
+                alt="About section"
                 className="w-30 h-30 rounded-lg border-black border-2 shadow-[4px_4px_0_0_black]"
               />
               <p className="text-md sm:text-lg">
@@ -36,11 +38,12 @@ const About: React.FC<{ aboutRef: RefObject<HTMLDivElement | null> }> = ({
           <h2 className="border-b-3 border-[#d8a013] text-[24px] font-semibold">
             Work Experience
           </h2>
-          {Work.map((item) => (
-            <div className="w-full flex gap-3 items-center justify-between text-wrap break-words ">
-              <img
+          {Work.map((item, index) => (
+            <div  key={index} className="w-full flex gap-3 items-center justify-between text-wrap break-words ">
+              <ResponsiveImage
                 src={item.image}
-                alt=""
+                webp=""
+                alt="About section"
                 className="w-30 h-30 rounded-lg border-black border-2 shadow-[4px_4px_0_0_black]"
               />
               <p className="text-md sm:text-lg">
@@ -54,11 +57,12 @@ const About: React.FC<{ aboutRef: RefObject<HTMLDivElement | null> }> = ({
           <h2 className="border-b-3 border-[#d8a013] text-[24px] font-semibold">
             Certificates
           </h2>
-          {Certificates.map((item) => (
-            <div className="w-full flex gap-3 items-center justify-between text-wrap break-words ">
-              <img
+          {Certificates.map((item, index) => (
+            <div key={index} className="w-full flex gap-3 items-center justify-between text-wrap break-words ">
+              <ResponsiveImage
                 src={item.image}
-                alt=""
+                webp=""
+                alt="About section"
                 className="w-30 h-30 rounded-lg border-black border-2 shadow-[4px_4px_0_0_black]"
               />
               <p className="text-md sm:text-lg">
@@ -72,7 +76,7 @@ const About: React.FC<{ aboutRef: RefObject<HTMLDivElement | null> }> = ({
           <h2 className="border-b-3 border-[#d8a013] text-[24px] font-semibold">
             Extra
           </h2>
-          <div className="w-full text-wrap break-words ">
+          <div className="w-full text-wrap break-words">
             <p className="text-md sm:text-lg">
               I'm currently open to frontend roles or freelance gigs, I'd like
               to get my experience up, so feel free to contact me on linkedin or

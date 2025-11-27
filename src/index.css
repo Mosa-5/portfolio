@@ -108,3 +108,7 @@ html {
                 transform: translateY(-10px) scale(1.02);
             }
         }
+        
+.translate-3d {
+  transform: translate3d(10px, 10px, 0);
+}
