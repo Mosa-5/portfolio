@@ -112,7 +112,7 @@ const RobotChatbot: React.FC = () => {
     <>
       {/* Chat Window */}
       <div
-        className={`fixed bottom-5 right-5 w-96 max-w-[calc(100vw_-_2.5rem)] h-[500px] bg-white rounded-xl shadow-2xl flex flex-col border-2 border-[#d8a013] transition-all duration-300 z-40 origin-bottom-right
+        className={`fixed bottom-5 max-sm:left-1/2 max-sm:-translate-x-1/2 sm:right-5 max-w-89 sm:max-w-96 w-full  h-[500px] bg-white rounded-xl shadow-2xl flex flex-col border-2 border-[#d8a013] transition-all duration-300 z-40 origin-bottom-right
     ${
       isOpen
         ? "scale-100 opacity-100 translate-y-0 pointer-events-auto"
