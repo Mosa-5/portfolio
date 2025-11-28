@@ -137,7 +137,7 @@ const RobotChatbot: React.FC = () => {
           {messages.map((msg, i) => (
             <div
               key={i}
-              className={`p-3 rounded-lg max-w-[80%] ${
+              className={`p-3 rounded-lg max-w-[80%] break-words text-start ${
                 msg.sender === "user"
                   ? "bg-indigo-100 self-end"
                   : "bg-gray-100 self-start"
