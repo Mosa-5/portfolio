@@ -5,7 +5,7 @@ import momentum from "@/assets/projectImages/Momentum.jpg";
 import StarWars from "@/assets/projectImages/StarWars.jpg";
 import Ecommerce from "@/assets/projectImages/Ecommerce.jpg";
 import Kiu from "@/assets/projectImages/KIU.jpg";
-import EvCarCharger from "@/assets/projectImages/EVCarCharger.jpg";
+import EvCarCharger from "@/assets/projectImages/EvCarCharger.jpg";
 import gymgearW from "@/assets/projectImages/GymGear.webp";
 import kokoW from "@/assets/projectImages/KoKo.webp";
 import neighbourlyW from "@/assets/projectImages/Neighbourly.webp";
