@@ -50,7 +50,7 @@ export const projectData: ProjectDataType[] = [
   image: EvCarCharger,
   imageWebp: EvCarChargerW,
   description:
-    "A collaborative EV charging platform built with a friend. Features a fully functioning customer website with payment integration, plus a separate admin panel for managing products and orders. The design was constrained by the site owner, so the focus was on clean, responsive, and reliable implementation.",
+    "A collaborative EV charging platform built with a friend. Features a fully functioning customer website with payment integration, plus a separate admin panel. The design was constrained by the site owner, so the focus was on clean, responsive, and reliable implementation.",
   techstack: "React, TypeScript, Ant Design, Supabase, Node.js",
   webLink: "https://www.evcarcharger.ge/ka",
   githubLink: "",

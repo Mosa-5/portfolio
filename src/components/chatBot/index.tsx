@@ -165,7 +165,7 @@ const RobotChatbot: React.FC = () => {
             onKeyDown={(e) => e.key === "Enter" && handleSend()}
           />
           <button
-            className="px-4 py-2 bg-[#d8a013] duration-300 cursor-pointer hover:bg-[#9e760f] rounded-md disabled:opacity-50"
+            className="px-4 py-2 bg-[#d8a013] max-sm:hidden duration-300 cursor-pointer hover:bg-[#9e760f] rounded-md disabled:opacity-50"
             onClick={handleSend}
             disabled={loading}
             aria-label="Send message"

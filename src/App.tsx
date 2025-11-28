@@ -5,7 +5,7 @@ import Header from './components/header'
 import Hero from './components/hero'
 import Projects from './components/projects'
 import TechStack from './components/techstack'
-import RobotChatbot from './components/mouseFollower'
+import RobotChatbot from './components/chatBot'
 
 
 function App() {
