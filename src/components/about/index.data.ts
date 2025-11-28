@@ -28,12 +28,12 @@ export const Work = [
 export const Certificates = [
   {
     image: tbc,
-    description: "finished React Accelerator course at TBC IT Academy",
+    description: "Finished React Accelerator course at TBC IT Academy",
     date: "2023 - 2024",
   },
   {
     image: coursera,
-    description: "finished IBM Data science course on Coursera",
+    description: "Finished IBM Data science course on Coursera",
     date: "2025",
   },
 ];

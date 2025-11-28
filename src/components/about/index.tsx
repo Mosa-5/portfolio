@@ -78,9 +78,7 @@ const About: React.FC<{ aboutRef: RefObject<HTMLDivElement | null> }> = ({
           </h2>
           <div className="w-full text-wrap break-words">
             <p className="text-md sm:text-lg">
-              I'm currently open to frontend roles or freelance gigs, I'd like
-              to get my experience up, so feel free to contact me on linkedin or
-              email me at:{" "}
+             Feel free to contact me on linkedin or email me at:{" "}
               <a
                 href="mailto:levanmosiashvili5@gmail.com"
                 className="font-medium text-xl hover:underline cursor-pointer"

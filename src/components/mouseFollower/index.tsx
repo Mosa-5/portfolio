@@ -178,7 +178,7 @@ const RobotChatbot: React.FC = () => {
       {/* Chat Button */}
       <button
         onClick={() => setIsOpen(true)}
-        className={`fixed duration-300 bottom-5 right-6 bg-[#d8a013] w-18 h-18 sm:w-17 sm:h-17  rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:scale-110 transition-transform z-50 ${
+        className={`fixed duration-300 bottom-5 right-6 bg-[#d8a013] w-18 h-18 sm:w-17 sm:h-17 2xl:w-20 2xl:h-20 2xl:right-15  rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:scale-110 transition-transform z-50 ${
           isOpen ? "scale-0 opacity-0" : "scale-100 opacity-100 animate-bounce"
         }`}
         aria-label="Open chatbot"

@@ -5,7 +5,7 @@ import Header from './components/header'
 import Hero from './components/hero'
 import Projects from './components/projects'
 import TechStack from './components/techstack'
-import CuteEyeFollower from './components/mouseFollower'
+import RobotChatbot from './components/mouseFollower'
 
 
 function App() {
@@ -44,7 +44,7 @@ function App() {
       <Projects projectsRef = {sectionRefs.projects} />
       <About aboutRef = {sectionRefs.about}/>
       </div>
-      <CuteEyeFollower/>
+      <RobotChatbot/>
     </div>
   )
 }
