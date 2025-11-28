@@ -5,6 +5,7 @@ import momentum from "@/assets/projectImages/Momentum.jpg";
 import StarWars from "@/assets/projectImages/StarWars.jpg";
 import Ecommerce from "@/assets/projectImages/Ecommerce.jpg";
 import Kiu from "@/assets/projectImages/KIU.jpg";
+import EvCarCharger from "@/assets/projectImages/EVCarCharger.jpg";
 import gymgearW from "@/assets/projectImages/GymGear.webp";
 import kokoW from "@/assets/projectImages/KoKo.webp";
 import neighbourlyW from "@/assets/projectImages/Neighbourly.webp";
@@ -12,7 +13,7 @@ import momentumW from "@/assets/projectImages/Momentum.webp";
 import StarWarsW from "@/assets/projectImages/StarWars.webp";
 import EcommerceW from "@/assets/projectImages/Ecommerce.webp";
 import KiuW from "@/assets/projectImages/KIU.webp";
-
+import EvCarChargerW from "@/assets/projectImages/EvCarCharger.webp";
 export const projectData: ProjectDataType[] = [
   {
     title: "KIU",
@@ -44,6 +45,16 @@ export const projectData: ProjectDataType[] = [
     webLink: "https://koko-lilac.vercel.app/home",
     githubLink: "https://github.com/Mosacd/koko",
   },
+  {
+  title: "EV Car Charger",
+  image: EvCarCharger,
+  imageWebp: EvCarChargerW,
+  description:
+    "A collaborative EV charging platform built with a friend. Features a fully functioning customer website with payment integration, plus a separate admin panel for managing products and orders. The design was constrained by the site owner, so the focus was on clean, responsive, and reliable implementation.",
+  techstack: "React, TypeScript, Ant Design, Supabase, Node.js",
+  webLink: "https://www.evcarcharger.ge/ka",
+  githubLink: "",
+},
   {
     title: "Neighbourly",
     image: neighbourly,

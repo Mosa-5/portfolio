@@ -22,7 +22,7 @@ const Project = () => {
                   src={project.image}
                   webp=""
                   alt="About section"
-                  className=""
+                  className="max-h-65 w-full"
                 />
                 <div className="max-w-6/7 flex flex-col justify-between h-full">
                   <div className="w-full flex flex-col gap-2 h-full overflow-hidden text-start *:text-white">
