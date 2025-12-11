@@ -6,7 +6,7 @@ import coursera from "@/assets/coursera-inc-logo.png";
 export const Education = [
   {
     image: Uni,
-    description: "CS sophemore at Kutaisi International University",
+    description: "Senior Computer Science student at Kutaisi International University",
     date: "2022 - current",
   },
   {
