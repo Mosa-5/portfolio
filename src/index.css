@@ -112,3 +112,17 @@ html {
 .translate-3d {
   transform: translate3d(10px, 10px, 0);
 }
+
+@keyframes windUp {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-400px) translateX(30px);
+    opacity: 0;
+  }
+}

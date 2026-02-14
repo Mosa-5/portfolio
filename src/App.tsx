@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react'
-import './App.css'
 import About from './components/about'
 import Header from './components/header'
 import Hero from './components/hero'
@@ -36,7 +35,7 @@ function App() {
   }
 
   return (
-    <div className='w-full relative sm:px-5 py-10 lg:p-10 max-w-[1280px] m-auto text-center'>
+    <div className='w-full relative sm:px-5 py-10 lg:p-10 max-w-7xl m-auto text-center'>
       <Header scrollTo = {scrollTo} />
       <Hero/>
       <div className='flex flex-col gap-40 mt-40 fancy-block *:pt-10'>

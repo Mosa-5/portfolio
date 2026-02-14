@@ -19,9 +19,14 @@ export const Education = [
 
 export const Work = [
   {
+    image: Uni,
+    description: "Frontend Developer (Part-time) at Kutaisi International University",
+    date: "2025 Nov - current",
+  },
+  {
     image: devsData,
     description: "Junior Frontend Developer at DevsData LCC",
-    date: "2025 - current",
+    date: "2025 Jul - 2026 Jan",
   },
 ];
 
@@ -37,5 +42,3 @@ export const Certificates = [
     date: "2025",
   },
 ];
-
-/* finished React Accelerator course at TBC IT Academy (2023 autumn - 2024 winter) */

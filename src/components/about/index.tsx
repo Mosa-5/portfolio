@@ -8,11 +8,11 @@ const About: React.FC<{ aboutRef: RefObject<HTMLDivElement | null> }> = ({
   return (
     <div
       ref={aboutRef}
-      className="flex flex-col gap-15 max-w-screen-xl mx-auto px-5 pb-10"
+      className="flex flex-col gap-15 max-w-7xl mx-auto px-5 pb-10"
     >
-      <h1 className="font-extrabold text-5xl sm:text-6xl lg:text-7xl border-b-3 border-[#d8a013] w-fit self-center">
+      <h2 className="font-extrabold text-5xl sm:text-6xl lg:text-7xl border-b-3 border-[#d8a013] w-fit self-center">
         About
-      </h1>
+      </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-20">
         {" "}
         <div className="flex flex-col gap-5">
@@ -20,11 +20,11 @@ const About: React.FC<{ aboutRef: RefObject<HTMLDivElement | null> }> = ({
             Education
           </h2>
           {Education.map((item, index) => (
-            <div key={index} className="w-full flex gap-3 items-center justify-between text-wrap break-words ">
+            <div key={index} className="w-full flex gap-3 items-center justify-between text-wrap wrap-break-word ">
               <ResponsiveImage
                 src={item.image}
                 webp=""
-                alt="About section"
+                alt={item.description}
                 className="w-30 h-30 rounded-lg border-black border-2 shadow-[4px_4px_0_0_black]"
               />
               <p className="text-md sm:text-lg">
@@ -39,11 +39,11 @@ const About: React.FC<{ aboutRef: RefObject<HTMLDivElement | null> }> = ({
             Work Experience
           </h2>
           {Work.map((item, index) => (
-            <div  key={index} className="w-full flex gap-3 items-center justify-between text-wrap break-words ">
+            <div  key={index} className="w-full flex gap-3 items-center justify-between text-wrap wrap-break-word ">
               <ResponsiveImage
                 src={item.image}
                 webp=""
-                alt="About section"
+                alt={item.description}
                 className="w-30 h-30 rounded-lg border-black border-2 shadow-[4px_4px_0_0_black]"
               />
               <p className="text-md sm:text-lg">
@@ -58,11 +58,11 @@ const About: React.FC<{ aboutRef: RefObject<HTMLDivElement | null> }> = ({
             Certificates
           </h2>
           {Certificates.map((item, index) => (
-            <div key={index} className="w-full flex gap-3 items-center justify-between text-wrap break-words ">
+            <div key={index} className="w-full flex gap-3 items-center justify-between text-wrap wrap-break-word ">
               <ResponsiveImage
                 src={item.image}
                 webp=""
-                alt="About section"
+                alt={item.description}
                 className="w-30 h-30 rounded-lg border-black border-2 shadow-[4px_4px_0_0_black]"
               />
               <p className="text-md sm:text-lg">
@@ -76,7 +76,7 @@ const About: React.FC<{ aboutRef: RefObject<HTMLDivElement | null> }> = ({
           <h2 className="border-b-3 border-[#d8a013] text-[24px] font-semibold">
             Extra
           </h2>
-          <div className="w-full text-wrap break-words">
+          <div className="w-full text-wrap wrap-break-word">
             <p className="text-md sm:text-lg">
              Feel free to contact me on linkedin or email me at:{" "}
               <a

@@ -90,13 +90,19 @@ const RobotChatbot: React.FC = () => {
         body: JSON.stringify({ prompt }),
       });
 
+      if (!response.ok) {
+        throw new Error(`Server error: ${response.status}`);
+      }
+
       const data = await response.json();
-      const botReply = data.reply;
+      const botReply = data?.reply;
+
+      if (!botReply) {
+        throw new Error("No reply received");
+      }
 
       setMessages((prev) => [...prev, { sender: "bot", text: botReply }]);
-      setLoading(false);
-    } catch (err) {
-      console.error(err);
+    } catch {
       setMessages((prev) => [
         ...prev,
         {
@@ -104,6 +110,7 @@ const RobotChatbot: React.FC = () => {
           text: "Sorry, I had trouble processing your question. Please try again!",
         },
       ]);
+    } finally {
       setLoading(false);
     }
   };
@@ -137,7 +144,7 @@ const RobotChatbot: React.FC = () => {
           {messages.map((msg, i) => (
             <div
               key={i}
-              className={`p-3 rounded-lg max-w-[80%] break-words text-start ${
+              className={`p-3 rounded-lg max-w-[80%] wrap-break-word text-start ${
                 msg.sender === "user"
                   ? "bg-indigo-100 self-end"
                   : "bg-gray-100 self-start"

@@ -1,5 +1,5 @@
 import resumeFile from "@/assets/Levan Mosiashvili Resume.pdf";
-import BlobPortfolio from "../portfolio image";
+import BlobPortfolio from "../portfolioImage";
 const Hero = () => {
   return (
     <div className="flex w-full justify-center sm:justify-between items-center mt-30">

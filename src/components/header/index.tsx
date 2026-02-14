@@ -1,7 +1,7 @@
 const Header:React.FC<{ scrollTo: (section: "home" | "about" | "projects") => void}>= ({scrollTo}) => {
 
     return(
-        <div className="flex gap-6 flex-col items-center sm:flex-row w-full max-w-screen-xl justify-between slide-in-top hiddenClass">
+        <div className="flex gap-6 flex-col items-center sm:flex-row w-full max-w-7xl justify-between slide-in-top hiddenClass">
             <div className="flex items-center"><h1 className="font-semibold text-[28px] sm:text-[24px]">Levan Mosiashvili</h1></div>
             <nav className="flex w-fit gap-10 items-center text-xl sm:text-lg *:cursor-pointer *:transition-all *:duration-300ms *:font-semibold  *:hover:text-[#d8a013] *:hover:translate-y-[-3px] *:hover:scale-120">
                 <h2 onClick={() => scrollTo("home")}>TechStack</h2>
@@ -9,7 +9,7 @@ const Header:React.FC<{ scrollTo: (section: "home" | "about" | "projects") => vo
                 <h2 onClick={() => scrollTo("about")}>About</h2>
             </nav>
             <div className="flex w-fit gap-10 items-center text-xl sm:text-lg *:cursor-pointer *:font-semibold *:transition-all *:duration-300ms *:hover:translate-y-[-3px] *:hover:scale-120">
-            <a target="_blank" href="https://www.linkedin.com/in/levan-mosiashvili-39165b301/" className="flex gap-1 group *:group-hover:text-[#d8a013] *:group-hover:fill-[#d8a013] *:group-hover:stroke-[#d8a013]">
+            <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/levan-mosiashvili-39165b301/" className="flex gap-1 group *:group-hover:text-[#d8a013] *:group-hover:fill-[#d8a013] *:group-hover:stroke-[#d8a013]">
                <h2 className="sm:hidden lg:inline">Linkedin</h2>
                <svg className="fill-[#25282B] w-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g className="group-hover:stroke-[#d8a013] group-hover:fill-[#d8a013]" id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                <g className="group-hover:stroke-[#d8a013] group-hover:fill-[#d8a013]" id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> 
@@ -19,7 +19,7 @@ const Header:React.FC<{ scrollTo: (section: "home" | "about" | "projects") => vo
                  10.5 13 10.5V10C13 9.44771 12.5523 9 12 9H11C10.4477 9 10 9.44772 10 10V18C10 18.5523 10.4477 19 11 19Z" fill="#25282B"></path>
                  <path className="group-hover:stroke-[#d8a013] group-hover:fill-[#d8a013]" fillRule="evenodd" clipRule="evenodd" d="M20 1C21.6569 1 23 2.34315 23 4V20C23 21.6569 21.6569 23 20 23H4C2.34315 23 1 21.6569 1 20V4C1 2.34315 2.34315 1 4 1H20ZM20 3C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3H20Z" fill=""></path> </g></svg>
                 </a>
-                <a target="_blank" href="https://github.com/Mosacd/portfolio" className="flex gap-1 group *:group-hover:text-[#d8a013] *:group-hover:fill-[#d8a013] *:group-hover:stroke-[#d8a013]">
+                <a target="_blank" rel="noopener noreferrer" href="https://github.com/Mosacd/portfolio" className="flex gap-1 group *:group-hover:text-[#d8a013] *:group-hover:fill-[#d8a013] *:group-hover:stroke-[#d8a013]">
                 <h2 className="sm:hidden lg:inline">Github</h2>
                 <svg className="fill-[#25282B] w-7" viewBox="0 0 20 20" version="1.1"   xmlns="http://www.w3.org/2000/svg"
   xmlnsXlink="http://www.w3.org/1999/xlink" fill=""><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> 

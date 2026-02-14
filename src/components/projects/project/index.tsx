@@ -12,7 +12,7 @@ const Project = () => {
             href={project.webLink}
             className="flex relative bg-[#25282B] flex-col shadow-[4px_4px_0_0_black] hover:shadow-[10px_10px_0_0_black] group hover:translate-y-[-5px]  hover:translate-x-[-5px] duration-300 cursor-pointer gap-2  items-center border-4 overflow-hidden rounded-lg  card-border-animation"
           >
-            <span className="absolute flex bg-[#d8a013] text-[#25282B] px-2 text-2xl top-2/7 left-1/2 -translate-x-1/2  p-1  opacity-0 group-hover:opacity-100 rounded-full p-2 duration-300 animate-bounce">
+            <span className="absolute flex bg-[#d8a013] text-[#25282B] px-2 text-2xl top-2/7 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 rounded-full p-2 duration-300 animate-bounce">
               <svg
                 className="w-7 sm:w-12 fill-black rotate-270"
                 viewBox="0 0 32 32"
@@ -80,7 +80,7 @@ const Project = () => {
             <ResponsiveImage
               src={project.image}
               webp=""
-              alt="About section"
+              alt={project.title}
               className="max-h-65 w-full"
             />
             <div className="max-w-6/7 flex flex-col justify-between h-full">
