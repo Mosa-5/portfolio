@@ -1,4 +1,4 @@
-import gymgear from "@/assets/projectImages/GymGear.jpg";
+import gymgear from "@/assets/projectImages/GymGearNew.png";
 import koko from "@/assets/projectImages/KoKo.jpg";
 import neighbourly from "@/assets/projectImages/Neighbourly.jpg";
 import momentum from "@/assets/projectImages/Momentum.jpg";
@@ -6,7 +6,7 @@ import StarWars from "@/assets/projectImages/StarWars.jpg";
 import Ecommerce from "@/assets/projectImages/Ecommerce.jpg";
 import Kiu from "@/assets/projectImages/KIU.jpg";
 import EvCarCharger from "@/assets/projectImages/EvCarCharger.jpg";
-import gymgearW from "@/assets/projectImages/GymGear.webp";
+import gymgearW from "@/assets/projectImages/GymGearNew.png";
 import kokoW from "@/assets/projectImages/KoKo.webp";
 import neighbourlyW from "@/assets/projectImages/Neighbourly.webp";
 import momentumW from "@/assets/projectImages/Momentum.webp";
@@ -31,7 +31,7 @@ export const projectData: ProjectDataType[] = [
     imageWebp: gymgearW,
     description:
       "A full-featured e-commerce platform for gym equipment. Includes user authentication, profiles with order history and wishlists, and product reviews. Data is managed via Supabase.",
-    techstack: "React, TypeScript, Tailwind, Vite",
+    techstack: "React, TypeScript, Supabase, React Query, React Hook Form, Zod, Tailwind, Radix UI, Framer Motion",
     webLink: "https://gym-app-7y5y.vercel.app/",
     githubLink: "https://github.com/Mosacd/gym-app",
   },
