@@ -5,19 +5,8 @@ const Projects:React.FC <{projectsRef: RefObject<HTMLDivElement | null>}>= ({pro
 
     return(
         <div ref={projectsRef} className="flex flex-col gap-15">
-            <h2 className="font-extrabold text-5xl sm:text-6xl lg:text-7xl border-b-3 border-[#d8a013] w-fit self-center">Projects</h2>
-        
-            <Project/>
-                {/* <div>
-                    <h2 className="text-2xl font-semibold border-b-4">Personal</h2>
-                    <Project/>
-                </div>
-                <div>
-                    <h2 className="text-2xl font-semibold border-b-4">Work</h2>
-
-                </div> */}
-                
-           
+            <h2 className="font-extrabold text-5xl sm:text-6xl lg:text-7xl border-b-3 border-[#d8a013] w-fit self-center">Projects</h2>  
+            <Project/>           
         </div>
     )
 }

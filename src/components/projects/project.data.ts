@@ -16,16 +16,6 @@ import KiuW from "@/assets/projectImages/KIU.webp";
 import EvCarChargerW from "@/assets/projectImages/EvCarCharger.webp";
 export const projectData: ProjectDataType[] = [
   {
-    title: "KIU",
-    image: Kiu,
-    imageWebp: KiuW,
-    description:
-      "A modern, responsive, and multilingual university website built with React, TypeScript, and Vite. Developed as a university project to represent Kutaisi International University (KIU) with dynamic content, interactive pages, and a polished user experience.",
-    techstack: "React, TypeScript, Tailwind, Vite",
-    webLink: "https://kiu-website.vercel.app/en",
-    githubLink: "https://github.com/Mosa-5/Kiu_website",
-  },
-  {
     title: "GymGear",
     image: gymgear,
     imageWebp: gymgearW,
@@ -34,6 +24,16 @@ export const projectData: ProjectDataType[] = [
     techstack: "React, TypeScript, Supabase, React Query, React Hook Form, Zod, Tailwind, Radix UI, Framer Motion",
     webLink: "https://gym-app-7y5y.vercel.app/",
     githubLink: "https://github.com/Mosacd/gym-app",
+  },
+  {
+    title: "KIU",
+    image: Kiu,
+    imageWebp: KiuW,
+    description:
+      "A modern, responsive, and multilingual university website built with React, TypeScript, and Vite. Developed as a university project to represent Kutaisi International University (KIU) with dynamic content, interactive pages, and a polished user experience.",
+    techstack: "React, TypeScript, Tailwind, Vite",
+    webLink: "https://kiu-website.vercel.app/en",
+    githubLink: "https://github.com/Mosa-5/Kiu_website",
   },
   {
     title: "KoKo",
