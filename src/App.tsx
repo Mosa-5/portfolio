@@ -24,7 +24,12 @@ function App() {
   const [fontLoaded, setFontLoaded] = useState(false);
 
   useEffect(() => {
-    document.fonts.ready.then(() => {
+    Promise.all([
+      document.fonts.load('300 1em Poppins'),
+      document.fonts.load('400 1em Poppins'),
+      document.fonts.load('600 1em Poppins'),
+      document.fonts.load('700 1em Poppins'),
+    ]).then(() => {
       setFontLoaded(true);
     });
   }, []);
