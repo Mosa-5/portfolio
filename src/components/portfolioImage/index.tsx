@@ -1,4 +1,4 @@
-import imageUrl from "../../assets/liknedin image.png";
+const imageUrl = "/liknedin image.png";
 
 const BlobPortfolio = ({ className = '' }) => {
   return (
