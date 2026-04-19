@@ -23,7 +23,7 @@ export const projectData: ProjectDataType[] = [
       "A full-featured e-commerce platform for gym equipment. Includes user authentication, profiles with order history and wishlists, and product reviews. Data is managed via Supabase.",
     techstack: "React, TypeScript, Supabase, React Query, React Hook Form, Zod, Tailwind, Radix UI, Framer Motion",
     webLink: "https://gym-app-7y5y.vercel.app/",
-    githubLink: "https://github.com/Mosacd/gym-app",
+    githubLink: "https://github.com/Mosa-5/gym-app",
   },
   {
     title: "KIU",
@@ -43,7 +43,7 @@ export const projectData: ProjectDataType[] = [
       "A playful educational app that helps users learn and practice sign language through interactive features and a clean, user-friendly interface.",
     techstack: "React, TypeScript, Tailwind, Vite",
     webLink: "https://koko-lilac.vercel.app/home",
-    githubLink: "https://github.com/Mosacd/koko",
+    githubLink: "https://github.com/Mosa-5/koko",
   },
   {
   title: "EV Car Charger",
@@ -63,7 +63,7 @@ export const projectData: ProjectDataType[] = [
       "A web app designed to connect users with local volunteer opportunities. Created based on a provided Figma design, focused on responsiveness and accessibility.",
     techstack: "React, TypeScript, Tailwind, Vite",
     webLink: "https://neighbourly-two.vercel.app/",
-    githubLink: "https://github.com/Mosacd/Neighbourly",
+    githubLink: "https://github.com/Mosa-5/Neighbourly",
   },
   {
     title: "Star Wars",
@@ -73,7 +73,7 @@ export const projectData: ProjectDataType[] = [
       "A Star Wars character catalog app using SWAPI. Features pagination, search with debounce and abort controller, and individual detail pages with expandable sections for films, species, and more.",
     techstack: "React, TypeScript, Tailwind, Vite",
     webLink: "https://star-wars-ruddy-five.vercel.app/",
-    githubLink: "https://github.com/Mosacd/star-wars",
+    githubLink: "https://github.com/Mosa-5/star-wars",
   },
   {
     title: "Momentum",
@@ -83,7 +83,7 @@ export const projectData: ProjectDataType[] = [
       "A Jira-style project management tool designed for 1920px desktop screens. Built for the Redberry International React x Laravel course application.",
     techstack: "React, TypeScript, Tailwind, Vite",
     webLink: "https://redberry-rose.vercel.app/",
-    githubLink: "https://github.com/Mosacd/redberry",
+    githubLink: "https://github.com/Mosa-5/redberry",
   },
   {
     title: "E-commerce",
@@ -93,7 +93,7 @@ export const projectData: ProjectDataType[] = [
       "A fully custom-built e-commerce site with no component libraries or CSS frameworks. Built in plain JSX, it features category pages, individual product pages, a cart dropdown, a cart page, and a 3-step checkout flow.",
     techstack: "React (CRA), JSX, Custom CSS",
     webLink: "https://e-commerce-psi-pink-86.vercel.app/women/w1",
-    githubLink: "https://github.com/Mosacd/E-commerce",
+    githubLink: "https://github.com/Mosa-5/E-commerce",
   },
 ];
 
