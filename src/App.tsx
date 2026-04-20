@@ -40,7 +40,7 @@ function App() {
   }
 
   return (
-    <div className='w-full relative sm:px-5 py-10 lg:p-10 max-w-7xl m-auto text-center'>
+    <div className='w-full relative sm:px-5 py-10 lg:p-10 max-w-7xl 2xl:max-w-screen-2xl m-auto text-center'>
       <Header scrollTo = {scrollTo} />
       <Hero/>
       <Suspense>

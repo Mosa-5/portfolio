@@ -3,7 +3,7 @@ import { projectData } from "../project.data";
 
 const Project = () => {
   return (
-    <div className="grid grid-cols-1 px-5 md:grid-cols-2 gap-15">
+    <div className="grid grid-cols-1 px-5 md:grid-cols-2 gap-15 2xl:gap-20">
       {projectData.map((project) => {
         return (
           <div
@@ -40,12 +40,12 @@ const Project = () => {
                 </g>
               </svg>
             </span>
-            <ResponsiveImage src={project.image} webp="" alt={project.title} className="max-h-65 w-full" />
-            <div className="max-w-6/7 flex flex-col justify-between h-full">
-              <div className="w-full flex flex-col gap-2 h-full overflow-hidden text-start *:text-white">
-                <h3 className="text-xl font-semibold self-center">{project.title}</h3>
-                <p>{project.description}</p>
-                <p>{project.techstack}</p>
+            <ResponsiveImage src={project.image} webp="" alt={project.title} className="max-h-65 2xl:max-h-80 w-full" />
+            <div className="max-w-6/7 flex flex-col justify-between h-full p-3 2xl:p-5">
+              <div className="w-full flex flex-col gap-2 2xl:gap-3 h-full overflow-hidden text-start *:text-white">
+                <h3 className="text-xl 2xl:text-2xl font-semibold self-center">{project.title}</h3>
+                <p className="2xl:text-lg">{project.description}</p>
+                <p className="2xl:text-lg">{project.techstack}</p>
               </div>
               <div className="w-full pb-5 h-fit flex justify-end">
                 {project.githubLink && (
@@ -56,7 +56,7 @@ const Project = () => {
                     onClick={(e) => e.stopPropagation()}
                     className="cursor-pointer"
                   >
-                    <svg className="fill-[white] w-10 hover:scale-115 duration-300 rounded-full" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="">
+                    <svg className="fill-[white] w-10 2xl:w-14 hover:scale-115 duration-300 rounded-full" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="">
                       <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                       <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
                       <g id="SVGRepo_iconCarrier">

@@ -1,14 +1,14 @@
 const Header:React.FC<{ scrollTo: (section: "home" | "about" | "projects") => void}>= ({scrollTo}) => {
 
     return(
-        <div className="flex gap-6 flex-col items-center sm:flex-row w-full max-w-7xl justify-between slide-in-top hiddenClass">
-            <div className="flex items-center"><h1 className="font-semibold text-[28px] sm:text-[24px]">Levan Mosiashvili</h1></div>
-            <nav className="flex w-fit gap-10 items-center text-xl sm:text-lg *:cursor-pointer *:transition-all *:duration-300ms *:font-semibold  *:hover:text-[#d8a013] *:hover:translate-y-[-3px] *:hover:scale-120">
+        <div className="flex gap-6 flex-col items-center sm:flex-row w-full max-w-7xl 2xl:max-w-screen-2xl justify-between slide-in-top hiddenClass">
+            <div className="flex items-center"><h1 className="font-semibold text-[28px] sm:text-[24px] 2xl:text-[30px]">Levan Mosiashvili</h1></div>
+            <nav className="flex w-fit gap-10 items-center text-xl sm:text-lg 2xl:text-xl *:cursor-pointer *:transition-all *:duration-300ms *:font-semibold  *:hover:text-[#d8a013] *:hover:translate-y-[-2px] *:hover:scale-105">
                 <h2 onClick={() => scrollTo("home")}>TechStack</h2>
                 <h2 onClick={() => scrollTo("projects")}>Projects</h2>
                 <h2 onClick={() => scrollTo("about")}>About</h2>
             </nav>
-            <div className="flex w-fit gap-10 items-center text-xl sm:text-lg *:cursor-pointer *:font-semibold *:transition-all *:duration-300ms *:hover:translate-y-[-3px] *:hover:scale-120">
+            <div className="flex w-fit gap-10 items-center text-xl sm:text-lg 2xl:text-xl *:cursor-pointer *:font-semibold *:transition-all *:duration-300ms *:hover:translate-y-[-2px] *:hover:scale-105">
             <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/levan-mosiashvili-39165b301/" className="flex gap-1 group *:group-hover:text-[#d8a013] *:group-hover:fill-[#d8a013] *:group-hover:stroke-[#d8a013]">
                <h2 className="sm:hidden lg:inline">Linkedin</h2>
                <svg className="fill-[#25282B] w-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g className="group-hover:stroke-[#d8a013] group-hover:fill-[#d8a013]" id="SVGRepo_bgCarrier" strokeWidth="0"></g>

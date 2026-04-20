@@ -5,7 +5,7 @@ const TechStack:React.FC<{homeRef: RefObject<HTMLDivElement | null>}>= ({homeRef
 
     return (
         <div ref={homeRef} className="flex flex-col gap-15">
-        <h2 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold border-b-3 border-[#d8a013] w-fit self-center">Tech Stack</h2>
+        <h2 className="text-5xl sm:text-6xl lg:text-7xl 2xl:text-8xl font-extrabold border-b-3 border-[#d8a013] w-fit self-center">Tech Stack</h2>
       
         <div className="relative">
             <WindParticles/>
@@ -14,7 +14,7 @@ const TechStack:React.FC<{homeRef: RefObject<HTMLDivElement | null>}>= ({homeRef
                 {techstackData.map((tech, index) => (
                     <li
                     style={{ animationDelay: `${index * 0.3}s` }}
-                    key={index} className="flex breathing group flex-col items-center gap-2 w-20 sm:w-30 sm:text-2xl hover:-translate-y-2 duration-300 cursor-pointer hover:scale-105 *:duration-300">
+                    key={index} className="flex breathing group flex-col items-center gap-2 w-20 sm:w-30 sm:text-2xl 2xl:w-36 2xl:text-3xl hover:-translate-y-2 duration-300 cursor-pointer hover:scale-105 *:duration-300">
                        {tech.svg}
                         <span className="text-center">{tech.name}</span>
                     </li>
