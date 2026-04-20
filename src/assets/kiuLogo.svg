@@ -1,0 +1,13 @@
+<svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" fill="#1e3461">
+  <!-- Left vertical bar -->
+  <circle cx="10" cy="8"  r="7"/>
+  <circle cx="10" cy="24" r="7"/>
+  <circle cx="10" cy="40" r="7"/>
+  <circle cx="10" cy="56" r="7"/>
+  <!-- Upper right arm -->
+  <circle cx="26" cy="24" r="7"/>
+  <circle cx="42" cy="8"  r="7"/>
+  <!-- Lower right arm -->
+  <circle cx="26" cy="40" r="7"/>
+  <circle cx="42" cy="56" r="7"/>
+</svg>
