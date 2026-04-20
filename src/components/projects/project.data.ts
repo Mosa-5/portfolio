@@ -1,17 +1,11 @@
 import gymgear from "@/assets/projectImages/GymGearNew.png";
 import koko from "@/assets/projectImages/KoKo.jpg";
 import neighbourly from "@/assets/projectImages/Neighbourly.jpg";
-import momentum from "@/assets/projectImages/Momentum.jpg";
-import StarWars from "@/assets/projectImages/StarWars.jpg";
-import Ecommerce from "@/assets/projectImages/Ecommerce.jpg";
 import Kiu from "@/assets/projectImages/KIU.jpg";
 import EvCarCharger from "@/assets/projectImages/EvCarCharger.jpg";
 import gymgearW from "@/assets/projectImages/GymGearNew.png";
 import kokoW from "@/assets/projectImages/KoKo.webp";
 import neighbourlyW from "@/assets/projectImages/Neighbourly.webp";
-import momentumW from "@/assets/projectImages/Momentum.webp";
-import StarWarsW from "@/assets/projectImages/StarWars.webp";
-import EcommerceW from "@/assets/projectImages/Ecommerce.webp";
 import KiuW from "@/assets/projectImages/KIU.webp";
 import EvCarChargerW from "@/assets/projectImages/EvCarCharger.webp";
 export const projectData: ProjectDataType[] = [
@@ -64,36 +58,6 @@ export const projectData: ProjectDataType[] = [
     techstack: "React, TypeScript, Tailwind, Vite",
     webLink: "https://neighbourly-two.vercel.app/",
     githubLink: "https://github.com/Mosa-5/Neighbourly",
-  },
-  {
-    title: "Star Wars",
-    image: StarWars,
-    imageWebp: StarWarsW,
-    description:
-      "A Star Wars character catalog app using SWAPI. Features pagination, search with debounce and abort controller, and individual detail pages with expandable sections for films, species, and more.",
-    techstack: "React, TypeScript, Tailwind, Vite",
-    webLink: "https://star-wars-ruddy-five.vercel.app/",
-    githubLink: "https://github.com/Mosa-5/star-wars",
-  },
-  {
-    title: "Momentum",
-    image: momentum,
-    imageWebp: momentumW,
-    description:
-      "A Jira-style project management tool designed for 1920px desktop screens. Built for the Redberry International React x Laravel course application.",
-    techstack: "React, TypeScript, Tailwind, Vite",
-    webLink: "https://redberry-rose.vercel.app/",
-    githubLink: "https://github.com/Mosa-5/redberry",
-  },
-  {
-    title: "E-commerce",
-    image: Ecommerce,
-    imageWebp: EcommerceW,
-    description:
-      "A fully custom-built e-commerce site with no component libraries or CSS frameworks. Built in plain JSX, it features category pages, individual product pages, a cart dropdown, a cart page, and a 3-step checkout flow.",
-    techstack: "React (CRA), JSX, Custom CSS",
-    webLink: "https://e-commerce-psi-pink-86.vercel.app/women/w1",
-    githubLink: "https://github.com/Mosa-5/E-commerce",
   },
 ];
 

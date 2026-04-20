@@ -1,6 +1,18 @@
+import { useState } from "react";
 import resumeFile from "@/assets/Levan Mosiashvili Resume.pdf";
 import BlobPortfolio from "../portfolioImage";
+
+const EMAIL = "levanmosiashvili5@gmail.com";
+
 const Hero = () => {
+  const [copied, setCopied] = useState(false);
+
+  const copyEmail = async () => {
+    await navigator.clipboard.writeText(EMAIL);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <div className="flex w-full justify-center sm:justify-between items-center mt-30">
       <div className="flex flex-col gap-10 items-center sm:items-start w-full max-w-lg slide-in-left hiddenClass">
@@ -19,44 +31,39 @@ const Hero = () => {
             based in Georgia.
           </h2>
         </div>
-        <a href={resumeFile} download>
-          <button
-            className="flex gap-2 border-2 bg-[#d8a013] text-md lg:text-lg rounded-lg px-6 py-3 md:w-fit text-black shadow-[4px_4px_0_0_black] cursor-pointer
-             font-semibold text-center no-underline select-none transition-all hover:bg-main-hover hover:shadow-[2px_2px_0_0_black]
-              hover:translate-x-[2px] hover:translate-y-[2px] items-center justify-center bg-main-color border-black text-background-color"
-          >
-            Resume
-            <svg
-              className="w-5"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+        <div className="flex gap-4 flex-wrap">
+          <a href={resumeFile} download>
+            <button
+              className="flex gap-2 border-2 bg-[#d8a013] text-md lg:text-lg rounded-lg px-6 py-3 w-[140px] lg:w-[160px] text-black shadow-[4px_4px_0_0_black] cursor-pointer
+               font-semibold text-center no-underline select-none transition-all hover:bg-main-hover hover:shadow-[2px_2px_0_0_black]
+                hover:translate-x-[2px] hover:translate-y-[2px] items-center justify-center border-black"
             >
-              <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-              <g
-                id="SVGRepo_tracerCarrier"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              ></g>
-              <g id="SVGRepo_iconCarrier">
-                <path
-                  d="M3 15C3 17.8284 3 19.2426 3.87868 20.1213C4.75736 21 6.17157 21 9 21H15C17.8284 21 19.2426 21 20.1213 20.1213C21 19.2426 21 17.8284 21 15"
-                  stroke="black"
-                  strokeWidth="2.4"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                ></path>
-                <path
-                  d="M12 3V16M12 16L16 11.625M12 16L8 11.625"
-                  stroke="black"
-                  strokeWidth="2.4"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                ></path>{" "}
-              </g>
-            </svg>
+              Resume
+              <svg className="w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 15C3 17.8284 3 19.2426 3.87868 20.1213C4.75736 21 6.17157 21 9 21H15C17.8284 21 19.2426 21 20.1213 20.1213C21 19.2426 21 17.8284 21 15" stroke="black" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"></path>
+                <path d="M12 3V16M12 16L16 11.625M12 16L8 11.625" stroke="black" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"></path>
+              </svg>
+            </button>
+          </a>
+          <button
+            onClick={copyEmail}
+            className="flex gap-2 border-2 border-black bg-[#25282B] text-md lg:text-lg rounded-lg px-6 py-3 w-[140px] lg:w-[160px] text-white shadow-[4px_4px_0_0_black] cursor-pointer
+             font-semibold text-center no-underline select-none transition-all hover:shadow-[2px_2px_0_0_black]
+              hover:translate-x-[2px] hover:translate-y-[2px] items-center justify-center"
+          >
+            {copied ? "Copied!" : "Email"}
+            {copied ? (
+              <svg className="w-5" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            ) : (
+              <svg className="w-5" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="m22 7-10 5L2 7" />
+              </svg>
+            )}
           </button>
-        </a>
+        </div>
       </div>
 
       <BlobPortfolio className="hidden w-full h-full sm:block max-w-xs lg:max-w-md slide-in-right hiddenClass" />

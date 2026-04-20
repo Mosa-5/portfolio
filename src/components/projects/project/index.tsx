@@ -92,8 +92,11 @@ const Project = () => {
                 <p>{project.techstack}</p>
               </div>
               <div className="w-full pb-5 h-fit flex justify-end">
-                <button
-                  onClick={() => window.open(project.githubLink, "_blank")}
+                {project.githubLink && <a
+                  href={project.githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
                   className="cursor-pointer"
                 >
                   <svg
@@ -144,7 +147,7 @@ const Project = () => {
                       </g>{" "}
                     </g>
                   </svg>
-                </button>
+                </a>}
               </div>
             </div>
           </a>

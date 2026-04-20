@@ -41,7 +41,7 @@ export const Work = [
     image: Uni,
     title: "STA for Scripting Languages subject",
     workPlace: "Kutaisi International University",
-    date: "2023 Sept - 2024 Jan",
+    date: "2023 Mar - 2023 Jun",
     description:
       "Mentored students in HTML, CSS, JavaScript, and React fundamentals, supporting them with assignments and hands-on exercises.",
   },
