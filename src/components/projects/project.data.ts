@@ -24,7 +24,7 @@ export const projectData: ProjectDataType[] = [
     image: Kiu,
     imageWebp: KiuW,
     description:
-      "A modern, responsive, and multilingual university website built with React, TypeScript, and Vite. Developed as a university project to represent Kutaisi International University (KIU) with dynamic content, interactive pages, and a polished user experience.",
+      "A responsive, multilingual university website for Kutaisi International University. Built with dynamic content, interactive pages, and a polished multilingual user experience.",
     techstack: "React, TypeScript, Tailwind, Vite",
     webLink: "https://kiu-website.vercel.app/en",
     githubLink: "https://github.com/Mosa-5/Kiu_website",
@@ -34,7 +34,7 @@ export const projectData: ProjectDataType[] = [
     image: koko,
     imageWebp: kokoW,
     description:
-      "A playful educational app that helps users learn and practice sign language through interactive features and a clean, user-friendly interface.",
+      "An educational app for learning and practising sign language. Features 3 types of exercises and webcam interactivity for real-time sign recognition, wrapped in a clean, user-friendly interface.",
     techstack: "React, TypeScript, Tailwind, Vite",
     webLink: "https://koko-lilac.vercel.app/home",
     githubLink: "https://github.com/Mosa-5/koko",
@@ -44,7 +44,7 @@ export const projectData: ProjectDataType[] = [
   image: EvCarCharger,
   imageWebp: EvCarChargerW,
   description:
-    "A collaborative EV charging platform built with a friend. Features a fully functioning customer website with payment integration, plus a separate admin panel. The design was constrained by the site owner, so the focus was on clean, responsive, and reliable implementation.",
+    "A collaborative EV charging platform with a customer-facing site including payment integration and a separate admin panel. Design was client-constrained; focus was on clean, responsive, and reliable delivery.",
   techstack: "React, TypeScript, Ant Design, Supabase, Node.js",
   webLink: "https://www.evcarcharger.ge/ka",
   githubLink: "",
@@ -54,7 +54,7 @@ export const projectData: ProjectDataType[] = [
     image: neighbourly,
     imageWebp: neighbourlyW,
     description:
-      "A web app designed to connect users with local volunteer opportunities. Created based on a provided Figma design, focused on responsiveness and accessibility.",
+      "A web app connecting users with local volunteer opportunities. Built from a provided Figma design with a focus on responsiveness and accessibility.",
     techstack: "React, TypeScript, Tailwind, Vite",
     webLink: "https://neighbourly-two.vercel.app/",
     githubLink: "https://github.com/Mosa-5/Neighbourly",
