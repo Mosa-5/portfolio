@@ -1,6 +1,6 @@
 import Uni from "@/assets/kiuLogo2.svg";
 import devsData from "@/assets/devsdata.svg";
-import tbc from "@/assets/TBC.svg";
+import tbc from "@/assets/TBC2.svg";
 export const Education = [
   {
     image: Uni,

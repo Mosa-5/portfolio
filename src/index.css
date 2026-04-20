@@ -27,6 +27,15 @@
   h1,h2,h3,p,span,li{
     color: var(--color-main-color);
   }
+
+  .about-card h1,
+  .about-card h2,
+  .about-card h3,
+  .about-card p,
+  .about-card span,
+  .about-card li {
+    color: white;
+  }
   
 }
 

@@ -18,7 +18,7 @@ const About: React.FC<{ aboutRef: RefObject<HTMLDivElement | null> }> = ({
         <div className="flex flex-col w-full gap-4">
           <h2 className="text-start text-[24px] font-semibold">Work Experience</h2>
           {Work.map((item, index) => (
-            <div key={index} className="flex flex-col gap-3 p-4 sm:p-5 text-start bg-white rounded-sm border-l-4 border-[#d8a013]">
+            <div key={index} className="about-card flex flex-col gap-3 p-4 sm:p-5 text-start bg-[#25282B] rounded-sm border-l-4 border-[#d8a013]">
               <div className="flex items-center gap-4">
                 {item.image ? (
                   <img src={item.image} alt={item.title} className="w-14 h-14 flex-shrink-0 rounded-md object-contain" />
@@ -30,11 +30,11 @@ const About: React.FC<{ aboutRef: RefObject<HTMLDivElement | null> }> = ({
                 )}
                 <div className="flex-1 flex flex-col gap-1">
                   <p className="font-semibold text-lg leading-tight">{item.title}</p>
-                  <span className="text-sm text-[#25282B]/60">{item.date}</span>
+                  <span className="text-sm text-white/60">{item.date}</span>
                 </div>
               </div>
               <p className="text-sm text-[#d8a013] font-semibold pl-18">{item.workPlace}</p>
-              <p className="text-sm text-[#25282B]/70 leading-relaxed pl-18">{item.description}</p>
+              <p className="text-sm text-white/70 leading-relaxed pl-18">{item.description}</p>
             </div>
           ))}
         </div>
@@ -42,16 +42,16 @@ const About: React.FC<{ aboutRef: RefObject<HTMLDivElement | null> }> = ({
         <div className="flex flex-col w-full gap-4">
           <h2 className="text-start text-[24px] font-semibold">Education</h2>
           {Education.map((item, index) => (
-            <div key={index} className="flex flex-col gap-3 p-4 sm:p-5 text-start bg-white rounded-sm border-l-4 border-[#d8a013]">
+            <div key={index} className="about-card flex flex-col gap-3 p-4 sm:p-5 text-start bg-[#25282B] rounded-sm border-l-4 border-[#d8a013]">
               <div className="flex items-center gap-4">
                 <img src={item.image} alt={item.title} className="w-14 h-14 flex-shrink-0 rounded-md object-contain" />
                 <div className="flex-1 flex flex-col gap-1">
                   <p className="font-semibold text-lg leading-tight">{item.title}</p>
-                  <span className="text-sm text-[#25282B]/60">{item.date}</span>
+                  <span className="text-sm text-white/60">{item.date}</span>
                 </div>
               </div>
               <p className="text-sm text-[#d8a013] font-semibold pl-18">{item.institution}</p>
-              <p className="text-sm text-[#25282B]/70 leading-relaxed pl-18">{item.description}</p>
+              <p className="text-sm text-white/70 leading-relaxed pl-18">{item.description}</p>
             </div>
           ))}
         </div>
@@ -59,16 +59,16 @@ const About: React.FC<{ aboutRef: RefObject<HTMLDivElement | null> }> = ({
         <div className="flex flex-col w-full gap-4">
           <h2 className="text-start text-[24px] font-semibold">Certificates</h2>
           {Certificates.map((item, index) => (
-            <div key={index} className="flex flex-col gap-3 p-4 sm:p-5 text-start bg-white rounded-sm border-l-4 border-[#d8a013]">
+            <div key={index} className="about-card flex flex-col gap-3 p-4 sm:p-5 text-start bg-[#25282B] rounded-sm border-l-4 border-[#d8a013]">
               <div className="flex items-center gap-4">
-                <img src={item.image} alt={item.title} className="w-14 h-14 flex-shrink-0 rounded-md object-contain bg-white" />
+                <img src={item.image} alt={item.title} className="w-14 h-14 flex-shrink-0 rounded-md object-contain" />
                 <div className="flex-1 flex flex-col gap-1">
                   <p className="font-semibold text-lg leading-tight">{item.title}</p>
-                  <span className="text-sm text-[#25282B]/60">{item.date}</span>
+                  <span className="text-sm text-white/60">{item.date}</span>
                 </div>
               </div>
               <p className="text-sm text-[#d8a013] font-semibold pl-18">{item.institution}</p>
-              <p className="text-sm text-[#25282B]/70 leading-relaxed pl-18">{item.description}</p>
+              <p className="text-sm text-white/70 leading-relaxed pl-18">{item.description}</p>
             </div>
           ))}
         </div>
