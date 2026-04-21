@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import ResponsiveImage from "@/components/imagewrapper";
 import { projectData } from "../project.data";
 
 const Project = () => {
+  const navigate = useNavigate();
   return (
     <div className="grid grid-cols-1 px-5 md:grid-cols-2 gap-15 2xl:gap-20">
       {projectData.map((project) => {
@@ -48,7 +50,7 @@ const Project = () => {
                 <hr className="border-white/20" />
                 <div className="flex flex-wrap gap-2">
                   {project.techstack.split(", ").map((tech) => (
-                    <span key={tech} className="text-xs 2xl:text-sm font-semibold px-2 py-1 rounded-sm bg-[#d8a013] text-black">
+                    <span key={tech} className="text-xs 2xl:text-sm font-semibold px-2 py-1 rounded-sm bg-white/10 text-white/80 border border-white/20">
                       {tech}
                     </span>
                   ))}
@@ -56,7 +58,7 @@ const Project = () => {
               </div>
               <div className="w-full mt-4 border-t border-white/10 pt-3 pb-4 h-fit flex justify-between items-center gap-3">
                 <button
-                  onClick={(e) => e.stopPropagation()}
+                  onClick={(e) => { e.stopPropagation(); navigate(`/projects/${project.slug}`); }}
                   className="flex items-center gap-1.5 text-sm 2xl:text-base font-semibold px-4 py-2 rounded-sm border border-white/20 text-white/70 hover:text-white hover:border-white/50 duration-200 cursor-pointer"
                 >
                   View Details

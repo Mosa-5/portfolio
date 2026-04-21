@@ -10,6 +10,7 @@ const RobotChatbot: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
+  const [cooldown, setCooldown] = useState(false);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const initialMessageSent = useRef(false);
@@ -112,6 +113,8 @@ const RobotChatbot: React.FC = () => {
       ]);
     } finally {
       setLoading(false);
+      setCooldown(true);
+      setTimeout(() => setCooldown(false), 3000);
     }
   };
 
@@ -169,12 +172,12 @@ const RobotChatbot: React.FC = () => {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Type a message..."
-            onKeyDown={(e) => e.key === "Enter" && handleSend()}
+            onKeyDown={(e) => e.key === "Enter" && !cooldown && handleSend()}
           />
           <button
             className="px-4 py-2 bg-[#d8a013] max-sm:hidden duration-300 cursor-pointer hover:bg-[#9e760f] rounded-md disabled:opacity-50"
             onClick={handleSend}
-            disabled={loading}
+            disabled={loading || cooldown}
             aria-label="Send message"
           >
             Send
