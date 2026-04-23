@@ -1,11 +1,11 @@
 import gymgear from "@/assets/projectImages/GymGearNew.png";
 import koko from "@/assets/projectImages/KoKo.jpg";
-import neighbourly from "@/assets/projectImages/Neighbourly.jpg";
+// import neighbourly from "@/assets/projectImages/Neighbourly.jpg";
 import Kiu from "@/assets/projectImages/KIU.jpg";
 import EvCarCharger from "@/assets/projectImages/EvCarCharger.jpg";
 import gymgearW from "@/assets/projectImages/GymGearNew.png";
 import kokoW from "@/assets/projectImages/KoKo.webp";
-import neighbourlyW from "@/assets/projectImages/Neighbourly.webp";
+// import neighbourlyW from "@/assets/projectImages/Neighbourly.webp";
 import KiuW from "@/assets/projectImages/KIU.webp";
 import EvCarChargerW from "@/assets/projectImages/EvCarCharger.webp";
 import { gymgearReview } from "./reviews/gymgear";
@@ -80,19 +80,19 @@ export const projectData: ProjectDataType[] = [
     webLink: "https://www.evcarcharger.ge/ka",
     githubLink: "",
   },
-  {
-    slug: "neighbourly",
-    title: "Neighbourly",
-    image: neighbourly,
-    imageWebp: neighbourlyW,
-    description:
-      "A web app connecting users with local volunteer opportunities. Built from a provided Figma design with a focus on responsiveness and accessibility.",
-    details:
-      "Neighbourly is a community-focused web app that helps users discover and sign up for local volunteer opportunities. It was built faithfully from a provided Figma design, with the primary goals being pixel-accurate responsiveness and strong accessibility. The project reinforced working within a fixed design spec while still writing clean, maintainable component code.",
-    techstack: "React, TypeScript, Tailwind, Vite",
-    webLink: "https://neighbourly-two.vercel.app/",
-    githubLink: "https://github.com/Mosa-5/Neighbourly",
-  },
+  // {
+  //   slug: "neighbourly",
+  //   title: "Neighbourly",
+  //   image: neighbourly,
+  //   imageWebp: neighbourlyW,
+  //   description:
+  //     "A web app connecting users with local volunteer opportunities. Built from a provided Figma design with a focus on responsiveness and accessibility.",
+  //   details:
+  //     "Neighbourly is a community-focused web app that helps users discover and sign up for local volunteer opportunities. It was built faithfully from a provided Figma design, with the primary goals being pixel-accurate responsiveness and strong accessibility. The project reinforced working within a fixed design spec while still writing clean, maintainable component code.",
+  //   techstack: "React, TypeScript, Tailwind, Vite",
+  //   webLink: "https://neighbourly-two.vercel.app/",
+  //   githubLink: "https://github.com/Mosa-5/Neighbourly",
+  // },
 ];
 
 type ProjectDataType = {
