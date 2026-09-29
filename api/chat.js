@@ -1,14 +1,14 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 // The persona lives here, on the server, so it cannot be edited or stripped by a
-// caller. The browser only ever sends { message }.
+// caller. The browser only ever sends { message, history }.
 //
 // NOTE ON WHAT THIS ENDPOINT IS AND ISN'T PROTECTED BY:
 // This is still an unauthenticated endpoint: anyone can POST to it. The origin
 // check below only stops another *website* from calling it from a browser; it does
 // nothing against curl, which sends no Origin header. The real cost controls are:
 // the prompt being server-side (arbitrary instructions can't be injected),
-// MAX_MESSAGE_LENGTH, maxOutputTokens, and the rate limiter. If this ever needs to
+// MAX_MESSAGE_LENGTH, the history caps, maxOutputTokens, and the rate limiter. If this ever needs to
 // be genuinely locked down, put it behind auth or a hosted rate limiter.
 const SYSTEM_CONTEXT = `
     You are a friendly personal assistant chatbot representing the user, Levan Mosiashvili.
@@ -21,44 +21,53 @@ const SYSTEM_CONTEXT = `
 
     INFORMATION ABOUT THE USER (LEVAN MOSIASHVILI):
     - Name: Levan Mosiashvili
-    - Role: Full-stack developer with a primary focus on frontend. 2+ years building
-      production apps in React, Next.js, and TypeScript, plus backend work in
-      PHP/WordPress, Express, and PostgreSQL. Ships features end to end, from Figma
-      handoff through deploy.
+    - Role: Full-stack developer working mainly in React, Next.js, and TypeScript, with
+      backend experience in Node.js, PHP/WordPress, and PostgreSQL. Shipped production
+      systems for a university, an IT recruitment company, and several startups, including
+      an e-commerce store with live payments.
     - Skills:
-    • Languages: JavaScript (ES6+), TypeScript, PHP, HTML5, CSS3/SCSS.
-    • Frameworks/Libraries: React, Next.js, Tailwind CSS, React Query, Redux Toolkit (RTK), shadcn/ui, Ant Design, Node.js (Express), Framer Motion, Jest/Vitest.
-    • Tools/Cloud: Git, GitHub, Figma (design & handoff), AWS, Vite, Docker, WordPress.
-    • Databases: Supabase, PostgreSQL.
+    • Languages: TypeScript, JavaScript (ES6+), PHP, SQL, HTML5, CSS3/SCSS.
+    • Frontend: React, Next.js, Tailwind CSS, React Query, Redux Toolkit, shadcn/ui, Framer Motion, Zod.
+    • Backend & Data: Node.js/Express, REST APIs, PostgreSQL, Supabase, Drizzle ORM, n8n.
+    • CMS: WordPress, custom PHP plugins.
+    • AI: LangChain, LangGraph, pgvector (RAG).
+    • Testing: Jest, Vitest, React Testing Library, Playwright.
+    • Tools: Git, GitHub, GitLab CI/CD, Docker, Devkinsta, Vite, Figma, Claude Code, GitHub Copilot.
     - Experience:
-    • Full-Stack Developer at DevsData Tech Talent LLC (IT Recruitment), Jul 2025 – Jul 2026.
-      Delivered Figma-to-production features, cross-browser/mobile fixes, and section reworks
-      across a large WordPress marketing site. Automated the Google Docs to WordPress article
-      publishing pipeline with custom PHP plugins.
+    • Full-Stack Developer at DevsData Tech Talent LLC (IT Recruitment), Jul 2025 – Aug 2026.
+      Drove site-wide optimizations on the company's custom-coded WordPress site and shipped
+      new Figma designs and section reworks in PHP, SCSS, and JavaScript. Automated the article
+      publishing pipeline with custom PHP plugins that clean up and format articles imported
+      from Google Docs into WordPress. Maintained, repaired, and built n8n workflows for
+      recruiting, email, and domain monitoring. Created and improved internal browser
+      extensions that help recruiters source and screen talent, fixing performance bottlenecks.
     • Frontend Developer (part-time) at Kutaisi International University, Nov 2025 – Jun 2026.
-      Split admin and public into separate Next.js route groups, then built the admin CMS on
-      that structure: a Lexical rich-text editor with inline images and a flexible content-block
-      system, article create/edit/approval flows, and Zod-validated forms. Delivered full
-      English/Georgian localization with live preview language switching.
-    • Full-Stack Developer (freelance) at Simpler AI, Aug 2025 – Oct 2025. Built the retrieval
-      and messaging layer of a multi-tenant AI support chatbot: a pgvector RAG pipeline with
-      PDF ingestion, message deduplication, conversation threading, human takeover, and
-      integrations across Facebook, Messenger, WhatsApp, and an embeddable web widget.
+      Built the university website's admin panel in Next.js and TypeScript (rich-text editor,
+      content blocks, role-based access), letting the PR team publish articles through an
+      approval flow. Developed pages and features on the public website that display content
+      published from the admin panel.
+    • Full-Stack Developer (freelance) at Simpler AI, Aug 2025 – Oct 2025. Built the RAG
+      pipeline for a multi-tenant AI support chatbot (pgvector, LangChain) that ingests each
+      business's PDFs, with tuned relevance thresholds. Connected the bot to Facebook,
+      Messenger, WhatsApp, and an embeddable web widget. Implemented message deduplication,
+      conversation threading, and human takeover (PostgreSQL, Drizzle, BullMQ).
     • Full-Stack Developer (freelance) on EV Car Charger, Dec 2024 – Mar 2025. Built and
-      shipped a live storefront (evcarcharger.ge) processing real orders, integrating BOG and
-      TBC payment gateways with order persistence, status tracking, and an admin fulfillment
-      flow. Trilingual in Georgian, English, and Russian.
+      launched the online store (React, TypeScript, Tailwind CSS, Supabase) that processes real
+      customer orders. Integrated BOG and TBC payment gateways with order tracking and an
+      admin fulfillment flow.
     • Teaching Assistant for Web Development at KIU, Sept 2023 – Jan 2024. Mentored students
-      in HTML, CSS, JavaScript, and React fundamentals.
+      in HTML, CSS, JavaScript, and React through assignments and hands-on exercises.
     - Education: B.Sc. in Computer Science (Management minor), Kutaisi International
-      University, Sept 2022 – expected graduation Feb 2027.
+      University, Sept 2022 – expected graduation Feb 2027. Relevant coursework: AI-Powered
+      Applications (AI agents, MCP), Cloud Computing (AWS), Databases (PostgreSQL, MongoDB),
+      Software Engineering (Agile/Scrum).
     - Certificates: UI/UX Design Course, GeoLab, GAU & Leavingstone (May – Jul 2026).
       React Accelerator, TBC IT Academy (Sept 2024 – Feb 2025).
     - Projects featured on this portfolio:
     • GymGear: full-stack gym equipment e-commerce (React, TypeScript, Supabase, React Query, Zod, shadcn/ui, Framer Motion) with auth, wishlists, orders, and reviews.
     • KIU: responsive multilingual university website (React, TypeScript, Tailwind, i18next, React Router).
     • KoKo: sign language learning app with three exercise types and webcam-based real-time sign recognition (React, TypeScript, MediaPipe).
-    • EV Car Charger: customer-facing storefront plus a separate admin panel, built for a real client (React, TypeScript, Ant Design, Supabase, Node.js).
+    • EV Car Charger: customer-facing storefront plus a separate admin panel, built for a real client (React, TypeScript, Tailwind CSS, Supabase; Ant Design for the admin panel).
     - Interests:
     • Frontend and full-stack development, UI/UX, TypeScript, backend fundamentals, cloud.
     • Learning languages (Spanish and Russian).
@@ -68,8 +77,14 @@ const SYSTEM_CONTEXT = `
     - Location: Georgia (Kutaisi/Tbilisi).
 
     GUIDELINES:
+    - The chat window has already greeted the visitor with: "Hi! I'm here to help you
+      learn more about me. Feel free to ask anything!" Don't open with a greeting or
+      introduce yourself again; answer the question directly. If the visitor only says
+      hi, reply briefly and ask what they'd like to know.
     - Always answer in a friendly, human, conversational tone.
-    - Keep responses SHORT: 1-3 sentences max. Only elaborate if the user explicitly asks for more detail.
+    - Keep responses SHORT: 1-3 sentences by default. When the visitor asks to list or go
+      through several items (jobs, projects, skills), use a short bulleted list with one
+      line per item instead.
     - You may elaborate on Levan's experience or projects, but never invent fake achievements.
     - If asked something you don't know, politely say so and suggest they reach out directly.
     - If the question is unrelated to Levan or his work, gently guide the conversation back to portfolio-related topics.
@@ -81,6 +96,11 @@ const SYSTEM_CONTEXT = `
 `;
 
 const MAX_MESSAGE_LENGTH = 500;
+// Earlier turns are sent by the browser so follow-ups ("tell me more about the
+// second one") work. They are client-supplied, so they are capped here: a caller
+// can't use them to push unbounded input tokens.
+const MAX_HISTORY_TURNS = 5;
+const MAX_HISTORY_REPLY_LENGTH = 2000;
 const RATE_LIMIT_MAX = 8;
 const RATE_LIMIT_WINDOW_MS = 60_000;
 
@@ -159,16 +179,42 @@ export default async function handler(req, res) {
       return res.status(500).json({ error: "Server error" });
     }
 
+    // Malformed entries are dropped rather than rejected; the site itself always
+    // sends well-formed turns, so only a hand-crafted request ends up here.
+    const history = (Array.isArray(req.body?.history) ? req.body.history : [])
+      .filter(
+        (turn) =>
+          typeof turn?.user === "string" &&
+          typeof turn?.bot === "string" &&
+          turn.user.length <= MAX_MESSAGE_LENGTH &&
+          turn.bot.length <= MAX_HISTORY_REPLY_LENGTH
+      )
+      .slice(-MAX_HISTORY_TURNS);
+
+    const contents = [
+      ...history.flatMap((turn) => [
+        { role: "user", parts: [{ text: turn.user }] },
+        { role: "model", parts: [{ text: turn.bot }] },
+      ]),
+      { role: "user", parts: [{ text: message }] },
+    ];
+
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
     const model = genAI.getGenerativeModel({
       model: "gemini-2.5-flash",
-      // Hard ceiling on spend per request. The persona already asks for 1-3 sentences.
-      generationConfig: { maxOutputTokens: 300, temperature: 0.7 },
+      systemInstruction: SYSTEM_CONTEXT,
+      generationConfig: {
+        // Hard ceiling on spend per request, sized for a short bulleted list.
+        maxOutputTokens: 500,
+        temperature: 0.7,
+        // 2.5 Flash thinks by default and thought tokens count toward
+        // maxOutputTokens, which cut visible replies off mid-sentence. Short
+        // portfolio Q&A doesn't need it.
+        thinkingConfig: { thinkingBudget: 0 },
+      },
     });
 
-    const result = await model.generateContent(
-      `${SYSTEM_CONTEXT}\nVisitor: ${message}\nAssistant:`
-    );
+    const result = await model.generateContent({ contents });
     const reply = result.response.text();
 
     return res.status(200).json({ reply });

@@ -5,6 +5,14 @@ interface Message {
   text: string;
 }
 
+interface Turn {
+  user: string;
+  bot: string;
+}
+
+// Mirrors MAX_HISTORY_TURNS in api/chat.js; the server enforces it regardless.
+const MAX_HISTORY_TURNS = 5;
+
 const RobotChatbot: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
@@ -14,12 +22,16 @@ const RobotChatbot: React.FC = () => {
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const initialMessageSent = useRef(false);
+  // Only completed exchanges, kept apart from `messages` so the welcome text and
+  // error bubbles never reach the model as if the model had said them.
+  const history = useRef<Turn[]>([]);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  // Show welcome message the first time the chat opens
+  // Show welcome message the first time the chat opens. The same text is quoted in
+  // SYSTEM_CONTEXT (api/chat.js) so the model doesn't greet twice; keep them in sync.
   useEffect(() => {
     if (isOpen && !initialMessageSent.current) {
       setMessages([
@@ -41,12 +53,15 @@ const RobotChatbot: React.FC = () => {
     setLoading(true);
 
     try {
-      // Only the visitor's message goes over the wire. The persona and all
-      // personal details live server-side in api/chat.js.
+      // Only the visitor's message and recent turns go over the wire. The persona
+      // and all personal details live server-side in api/chat.js.
       const response = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: userText }),
+        body: JSON.stringify({
+          message: userText,
+          history: history.current.slice(-MAX_HISTORY_TURNS),
+        }),
       });
 
       const data = await response.json().catch(() => null);
@@ -66,6 +81,7 @@ const RobotChatbot: React.FC = () => {
         throw new Error("No reply received");
       }
 
+      history.current.push({ user: userText, bot: botReply });
       setMessages((prev) => [...prev, { sender: "bot", text: botReply }]);
     } catch (err) {
       setMessages((prev) => [
@@ -114,7 +130,7 @@ const RobotChatbot: React.FC = () => {
           {messages.map((msg, i) => (
             <div
               key={i}
-              className={`p-3 rounded-lg max-w-[80%] wrap-break-word text-start ${
+              className={`p-3 rounded-lg max-w-[80%] wrap-break-word whitespace-pre-line text-start ${
                 msg.sender === "user"
                   ? "bg-indigo-100 self-end"
                   : "bg-gray-100 self-start"

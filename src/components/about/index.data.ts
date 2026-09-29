@@ -10,7 +10,7 @@ export const Education = [
       "Kutaisi International University - Expected graduation: Feb 2027",
     date: "2022 Sept - Present",
     description:
-      "Relevant coursework: Web Development (HTML/CSS, JavaScript, React), Java Programming, Cloud Computing (AWS), Databases (PostgreSQL, MongoDB), Software Engineering (Agile/Scrum, Waterfall), Full-Stack Development (React, TypeScript, Express.js, testing with Jest/Mocha)",
+      "Relevant coursework: AI-Powered Applications (AI agents, MCP), Web Development (HTML/CSS, JavaScript, React), Java Programming, Cloud Computing (AWS), Databases (PostgreSQL, MongoDB), Software Engineering (Agile/Scrum, Waterfall), Full-Stack Development (React, TypeScript, Express.js, testing with Jest/Mocha)",
   },
 ];
 

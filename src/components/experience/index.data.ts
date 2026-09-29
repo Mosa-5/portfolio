@@ -8,40 +8,52 @@ export const Work = [
     image: devsData,
     title: "Full-Stack Developer",
     workPlace: "DevsData Tech Talent LLC – IT Recruitment",
-    date: "2025 Jul - 2026 Jul",
-    description:
-      "Delivered Figma-to-production features, cross-browser/mobile fixes, and section reworks balancing performance against visual quality across a large WordPress marketing site. Automated the Google Docs to WordPress article publishing pipeline with custom PHP plugins, using post-meta guards and hook lifecycle ordering for safe, idempotent content transforms.",
+    date: "2025 Jul - 2026 Aug",
+    description: [
+      "Drove site-wide optimizations on the company's custom-coded WordPress site and shipped new Figma designs and section reworks in PHP, SCSS, and JavaScript, keeping pages fast and consistent across browsers and devices.",
+      "Automated the article publishing pipeline with custom PHP plugins that clean up and format articles imported from Google Docs into WordPress, tracing edge-case failures to root cause, so the content team publishes SEO articles without manual reformatting.",
+      "Maintained, repaired, and built n8n workflows for recruiting, email, and domain monitoring, modernizing outdated ones so business-critical processes run automatically and reliably.",
+      "Created and improved internal browser extensions that help recruiters source and screen talent, fixing performance bottlenecks to speed up daily candidate search.",
+    ],
   },
   {
     image: Uni,
     title: "Frontend Developer (Part-time)",
     workPlace: "Kutaisi International University",
     date: "2025 Nov - 2026 Jun",
-    description:
-      "Drove the split of admin and public into separate Next.js route groups with independent layouts, then built the admin CMS on that structure: a Lexical rich-text editor with inline images and a flexible content-block system, article create/edit/approval flows, and Zod-validated forms. Delivered full English/Georgian localization across the admin and public site, with live preview language switching and locale-aware date formatting.",
+    description: [
+      "Built the university website's admin panel in Next.js and TypeScript (rich-text editor, content blocks, role-based access), letting the PR team publish articles through an approval flow.",
+      "Developed pages and features on the public website that display content published from the admin panel.",
+    ],
   },
   {
     image: simpler,
     title: "Full-Stack Developer (Freelance)",
     workPlace: "Simpler AI",
     date: "2025 Aug - 2025 Oct",
-    description:
-      "AI Customer Support Platform (Simpler.ge): Built the retrieval and messaging layer of a multi-tenant support chatbot, including a pgvector RAG pipeline with PDF ingestion and tuned relevance thresholds, message deduplication, conversation threading, human takeover, and integrations across Facebook, Messenger, WhatsApp, and an embeddable web widget.",
+    description: [
+      "Built the RAG pipeline for a multi-tenant AI support chatbot (pgvector, LangChain) that ingests each business's PDFs, with tuned relevance thresholds so the bot answers from real company documents.",
+      "Connected the bot to Facebook, Messenger, WhatsApp, and an embeddable web widget, letting businesses automate support across all their customer channels.",
+      "Implemented message deduplication, conversation threading, and human takeover (PostgreSQL, Drizzle, BullMQ), so staff can step into any conversation the bot can't resolve.",
+    ],
   },
   {
     image: evcar,
     title: "Full-Stack Developer (Freelance)",
     workPlace: "EV Car Charger",
     date: "2024 Dec - 2025 Mar",
-    description:
-      "EV Charger E-commerce (evcarcharger.ge): Built and shipped a live storefront processing real orders, integrating BOG and TBC payment gateways with order persistence, customer-facing status tracking, and an admin fulfillment flow. Trilingual across Georgian, English, and Russian, covering both UI strings and Supabase-stored product content.",
+    description: [
+      "Built and launched the online store (React, TypeScript, Tailwind CSS, Supabase), giving the business an online sales channel that processes real customer orders.",
+      "Integrated BOG and TBC payment gateways with order tracking and an admin fulfillment flow, so customers pay by card and the owner manages every order from one dashboard.",
+    ],
   },
   {
     image: Uni,
     title: "Teaching Assistant – Web Development",
     workPlace: "Kutaisi International University",
     date: "2023 Sept - 2024 Jan",
-    description:
-      "Mentored students in HTML, CSS, JavaScript, and React fundamentals through assignments and hands-on exercises.",
+    description: [
+      "Mentored students in HTML, CSS, JavaScript, and React through assignments and hands-on exercises.",
+    ],
   },
 ];

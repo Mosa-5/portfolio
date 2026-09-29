@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+/* Default 2xl is 96rem (1536px), which is exactly a 1920px screen at 125% scale.
+   Raised so those laptop-class displays stay below 2xl in every browser. */
+@theme {
+  --breakpoint-2xl: 100rem;
+}
+
 /* Self-hosted Poppins, latin subset, served from /public/fonts so the URLs stay
    stable enough to preload from index.html.
 

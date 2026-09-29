@@ -31,7 +31,11 @@ const Experience: React.FC<{ experienceRef: RefObject<HTMLDivElement | null> }> 
               </div>
             </div>
             <p className="text-sm 2xl:text-base text-[#d8a013] font-semibold pl-18 2xl:pl-26">{item.workPlace}</p>
-            <p className="text-sm 2xl:text-base text-white/70 leading-relaxed pl-18 2xl:pl-26">{item.description}</p>
+            <ul className="flex flex-col gap-1.5 list-disc text-sm 2xl:text-base text-white/70 leading-relaxed pl-18 2xl:pl-26">
+              {item.description.map((point) => (
+                <li key={point}>{point}</li>
+              ))}
+            </ul>
           </div>
         ))}
       </div>
