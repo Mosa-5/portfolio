@@ -34,7 +34,7 @@ const SYSTEM_CONTEXT = `
     • Testing: Jest, Vitest, React Testing Library, Playwright.
     • Tools: Git, GitHub, GitLab CI/CD, Docker, Devkinsta, Vite, Figma, Claude Code, GitHub Copilot.
     - Experience:
-    • Full-Stack Developer at DevsData Tech Talent LLC (IT Recruitment), Jul 2025 – Aug 2026.
+    • Full-Stack Developer at DevsData Tech Talent LLC (IT Recruitment), Jul 2025 – Oct 2026.
       Drove site-wide optimizations on the company's custom-coded WordPress site and shipped
       new Figma designs and section reworks in PHP, SCSS, and JavaScript. Automated the article
       publishing pipeline with custom PHP plugins that clean up and format articles imported

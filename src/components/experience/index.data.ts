@@ -2,18 +2,31 @@ import Uni from "@/assets/kiuLogo2.svg";
 import devsData from "@/assets/devsdata.svg";
 import simpler from "@/assets/simpler.svg";
 import evcar from "@/assets/evcar.png";
+import genofit from "@/assets/genofit.png";
 
 export const Work = [
   {
     image: devsData,
     title: "Full-Stack Developer",
     workPlace: "DevsData Tech Talent LLC – IT Recruitment",
-    date: "2025 Jul - 2026 Aug",
+    date: "2025 Jul - 2026 Oct",
     description: [
       "Drove site-wide optimizations on the company's custom-coded WordPress site and shipped new Figma designs and section reworks in PHP, SCSS, and JavaScript, keeping pages fast and consistent across browsers and devices.",
       "Automated the article publishing pipeline with custom PHP plugins that clean up and format articles imported from Google Docs into WordPress, tracing edge-case failures to root cause, so the content team publishes SEO articles without manual reformatting.",
       "Maintained, repaired, and built n8n workflows for recruiting, email, and domain monitoring, modernizing outdated ones so business-critical processes run automatically and reliably.",
       "Created and improved internal browser extensions that help recruiters source and screen talent, fixing performance bottlenecks to speed up daily candidate search.",
+    ],
+  },
+  {
+    image: genofit,
+    title: "Full-Stack Developer (Freelance)",
+    workPlace: "GenofIT",
+    date: "2026 Oct - 2026 Nov",
+    description: [
+      "Built, in a team of two, the website for a software testing company and its training academy (Next.js, TypeScript, Supabase, Tailwind CSS), presenting services, courses, events and graduates from the database.",
+      "Implemented course checkout with Stripe installment payments, email verification and bot protection, recording each webhook in a single database transaction so repeated webhooks never double-count a payment.",
+      "Developed a separate admin panel where staff edit every section of the site and follow orders and payments, with access enforced by row-level security and pages revalidated right after each save.",
+      "Covered technical SEO, accessibility, and automated tests with Vitest and Playwright.",
     ],
   },
   {
